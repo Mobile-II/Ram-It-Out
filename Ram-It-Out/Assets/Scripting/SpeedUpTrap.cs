@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpingBox : MonoBehaviour
+public class SpeedUpTrap : MonoBehaviour
 {
-    public GameObject JumpingPad;
-    public Rigidbody Player;
+    public GameObject SpeedLeft;
+    public GameObject SpeedRight;
+    public GameObject SpeedTop;
+    public GameObject SpeedBottom;
     public float thrust;
+    public List<Rigidbody> Boxes;
+
     // Start is called before the first frame update
     void Start()
     {
-        thrust = 100.0f;
+        
     }
 
     // Update is called once per frame
@@ -20,10 +24,10 @@ public class JumpingBox : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        //if ()
+        //if()
         {
-            Player.AddForce(transform.up * thrust, ForceMode.Impulse);
-            Player.useGravity = true;
+            //Boxes.AddForce(transform.up * thrust, ForceMode.Impulse);
+           // Player.useGravity = true;
         }
     }
 }

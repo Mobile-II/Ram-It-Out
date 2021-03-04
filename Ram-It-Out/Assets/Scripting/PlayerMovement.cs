@@ -21,5 +21,10 @@ public class PlayerMovement : MonoBehaviour
         transform.Rotate(0, x, 0);
         // Walking with vertical key
         transform.Translate(0, 0, z);
+
+        //if (Input.GetKey("Fire1"))
+        {
+            
+        }
     }
 }
