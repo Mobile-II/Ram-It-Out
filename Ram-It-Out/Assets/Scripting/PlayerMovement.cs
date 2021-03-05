@@ -5,10 +5,13 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Rigidbody playerRB;
+    bool jumpingLimit;
+    float limitTime;
     // Start is called before the first frame update
     void Start()
     {
-        
+        limitTime = 5;
     }
 
     // Update is called once per frame
@@ -22,9 +25,32 @@ public class PlayerMovement : MonoBehaviour
         // Walking with vertical key
         transform.Translate(0, 0, z);
 
-        //if (Input.GetKey("Fire1"))
+        if (CrossPlatformInputManager.GetButton("Fire1"))
         {
-            
+            CountDown();
+        }
+        PlayerJump();
+        CountDown();
+        Debug.Log(limitTime);
+    }
+    void PlayerJump()
+    {
+        if (jumpingLimit == true)
+        {
+            playerRB.AddForce(transform.up * 50, ForceMode.VelocityChange);
+            jumpingLimit = false;
+        }
+        if (limitTime > 5f)
+        {
+            jumpingLimit = true;
+            limitTime = 0f;
+        }
+    }
+    void CountDown()
+    {
+        if (jumpingLimit == false)
+        {
+            limitTime += Time.deltaTime;
         }
     }
 }
