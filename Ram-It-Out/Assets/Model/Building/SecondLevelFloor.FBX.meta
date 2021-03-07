@@ -1,0 +1,215 @@
+fileFormatVersion: 2
+guid: 98dfe2ff193d5bd479dfa1722a3b5cb1
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: BayanTree
+    100002: BayanTree007
+    100004: BayanTree008
+    100006: BayanTree009
+    100008: BayanTree010
+    100010: BayanTree011
+    100012: BayanTree012
+    100014: LadderFirstToSecond
+    100016: Level 2 Floor
+    100018: //RootNode
+    400000: BayanTree
+    400002: BayanTree007
+    400004: BayanTree008
+    400006: BayanTree009
+    400008: BayanTree010
+    400010: BayanTree011
+    400012: BayanTree012
+    400014: LadderFirstToSecond
+    400016: Level 2 Floor
+    400018: //RootNode
+    2100000: BrickWallTexture
+    2100002: Ladder
+    2100004: Trunk
+    2100006: Branches
+    2100008: Leaves
+    2100010: PillarRoots
+    2100012: Wigglers
+    2300000: BayanTree
+    2300002: BayanTree007
+    2300004: BayanTree008
+    2300006: BayanTree009
+    2300008: BayanTree010
+    2300010: BayanTree011
+    2300012: BayanTree012
+    2300014: LadderFirstToSecond
+    2300016: Level 2 Floor
+    3300000: BayanTree
+    3300002: BayanTree007
+    3300004: BayanTree008
+    3300006: BayanTree009
+    3300008: BayanTree010
+    3300010: BayanTree011
+    3300012: BayanTree012
+    3300014: LadderFirstToSecond
+    3300016: Level 2 Floor
+    4300000: Level 2 Floor
+    4300002: LadderFirstToSecond
+    4300004: BayanTree010
+    4300006: BayanTree009
+    4300008: BayanTree008
+    4300010: BayanTree007
+    4300012: BayanTree
+    4300014: BayanTree011
+    4300016: BayanTree012
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Branches
+    second: {fileID: 2100000, guid: 24ac88ef7b0558e41a90276576f6ce92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BrickWallTexture
+    second: {fileID: 2100000, guid: 888b39e85c284cb4ea2d3688c96e6d38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ladder
+    second: {fileID: 2100000, guid: b73d97b1545d8b7469f6a11e4e8790ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaves
+    second: {fileID: 2100000, guid: 95c21b6ca5b0e5840b9020b863548acc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PillarRoots
+    second: {fileID: 2100000, guid: 6b378b7ff83374044a8ddaf61be6f4a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trunk
+    second: {fileID: 2100000, guid: 39e1960f368c141408ef477cdacff7ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wigglers
+    second: {fileID: 2100000, guid: db99763b818a1414f867ff9f7cdef3e7, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Brick Alpha
+    second: {fileID: 2800000, guid: 89f02103ae47b0145a826c64a6f332c6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Brick Specular Map
+    second: {fileID: 2800000, guid: 839a1bc8fc887604e9bb2d75a37648c6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Normalabstract-wooden-seamless-texture-background_23-2148283204
+    second: {fileID: 2800000, guid: 6b9db3fbaee7ecb4cb3dd7607d20a5f0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Specularabstract-wooden-seamless-texture-background_23-2148283204
+    second: {fileID: 2800000, guid: 8b2ddd5edd4c7c848880aac1880e12b6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: abstract-wooden-seamless-texture-background_23-2148283204
+    second: {fileID: 2800000, guid: d0c5ce397f3a45848857fe6f941015f0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bigleaf3
+    second: {fileID: 2800000, guid: 0444c2f7a7874d745b92b2c4abb279e2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: canstockphoto56946637
+    second: {fileID: 2800000, guid: 760c42aa1258f1e4093ab8339e4b2f3d, type: 3}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
