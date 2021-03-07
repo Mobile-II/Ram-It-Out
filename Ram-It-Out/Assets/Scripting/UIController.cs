@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class UIController : MonoBehaviour
 {
     public Button PauseButton;
+    public Button PauseMenuButton;
     public Button LevelButton;
 
     ///[SerializeField]
@@ -25,6 +26,20 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetButtonDown("Pause"))
+        {
+            if (!paused)
+            {
+                paused = true;
+                DisplayPauseMenu();
+            }
+            else
+            {
+                paused = false;
+                HidePauseMenu();
+            }
+        }
+
         if (Input.GetButtonDown("LevelSelection"))
         {
             if (!openlevelselection)
@@ -40,16 +55,26 @@ public class UIController : MonoBehaviour
         }
     }
 
-    public void DisplayLevelSelection()
+    public void DisplayLevelSelection() //for level selection menu to display
     {
        LevelButton.gameObject.SetActive(true);
     }    
 
-    public void HideLevelSelection()
-    {
+    public void HideLevelSelection() //for level selection menu to hide
+        {
         LevelButton.gameObject.SetActive(false);
     }
 
+    public void DisplayPauseMenu() //pause menu show
+    {
+        PauseMenuButton.gameObject.SetActive(true);
+    }
+
+    public void HidePauseMenu() //pause menu hide
+    {
+        PauseMenuButton.gameObject.SetActive(false);
+    }
+    
     public void ButtonQuitToMenu()    //quit to menu
     {
         SceneManager.LoadScene(0);
