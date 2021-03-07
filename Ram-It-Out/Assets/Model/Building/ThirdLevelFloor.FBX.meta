@@ -1,0 +1,259 @@
+fileFormatVersion: 2
+guid: e67c0f21ba9ea4b4baa7c3d9f09a1ce2
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: BayanTree001
+    100002: BayanTree015
+    100004: BayanTree016
+    100006: BayanTree017
+    100008: BayanTree018
+    100010: BayanTree019
+    100012: GarlicFlower
+    100014: GarlicFlower001
+    100016: GarlicFlower002
+    100018: GarlicFlower003
+    100020: Level 3 Floor
+    100022: OakTree
+    100024: OakTree001
+    100026: //RootNode
+    400000: BayanTree001
+    400002: BayanTree015
+    400004: BayanTree016
+    400006: BayanTree017
+    400008: BayanTree018
+    400010: BayanTree019
+    400012: GarlicFlower
+    400014: GarlicFlower001
+    400016: GarlicFlower002
+    400018: GarlicFlower003
+    400020: Level 3 Floor
+    400022: OakTree
+    400024: OakTree001
+    400026: //RootNode
+    2100000: BrickWallTexture
+    2100002: Trunk
+    2100004: Branch0
+    2100006: Branch1
+    2100008: Leaves
+    2100010: Branches
+    2100012: PillarRoots
+    2100014: Wigglers
+    2100016: Fronds
+    2100018: Stalks
+    2100020: Flowers
+    2300000: BayanTree001
+    2300002: BayanTree015
+    2300004: BayanTree016
+    2300006: BayanTree017
+    2300008: BayanTree018
+    2300010: BayanTree019
+    2300012: GarlicFlower
+    2300014: GarlicFlower001
+    2300016: GarlicFlower002
+    2300018: GarlicFlower003
+    2300020: Level 3 Floor
+    2300022: OakTree
+    2300024: OakTree001
+    3300000: BayanTree001
+    3300002: BayanTree015
+    3300004: BayanTree016
+    3300006: BayanTree017
+    3300008: BayanTree018
+    3300010: BayanTree019
+    3300012: GarlicFlower
+    3300014: GarlicFlower001
+    3300016: GarlicFlower002
+    3300018: GarlicFlower003
+    3300020: Level 3 Floor
+    3300022: OakTree
+    3300024: OakTree001
+    4300000: Level 3 Floor
+    4300002: OakTree001
+    4300004: OakTree
+    4300006: BayanTree015
+    4300008: GarlicFlower
+    4300010: GarlicFlower001
+    4300012: GarlicFlower002
+    4300014: GarlicFlower003
+    4300016: BayanTree001
+    4300018: BayanTree016
+    4300020: BayanTree019
+    4300022: BayanTree017
+    4300024: BayanTree018
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Branch0
+    second: {fileID: 2100000, guid: 57813a270cfeb2644a65744738161beb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Branch1
+    second: {fileID: 2100000, guid: d13e127de7dc0cb41bb1e0a87e99a707, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Branches
+    second: {fileID: 2100000, guid: 1c7d0032fbd3878479305d6d7c0085b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BrickWallTexture
+    second: {fileID: 2100000, guid: 33aba51ebcb8c5e4c815790f2a38fc2c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flowers
+    second: {fileID: 2100000, guid: d12bd73bb2e1dc543b10a8aee873f40a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fronds
+    second: {fileID: 2100000, guid: a859e94b6410bb44295ac71998cef799, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaves
+    second: {fileID: 2100000, guid: 1e6a30e450b67f342808b26a91bdd5da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PillarRoots
+    second: {fileID: 2100000, guid: d6afa326b3fa7e340883b6f442a9a1c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stalks
+    second: {fileID: 2100000, guid: 594f971e6b14e9f41a180df6246b22bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trunk
+    second: {fileID: 2100000, guid: 0e65414c6eb21c34db26f666a311ec13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wigglers
+    second: {fileID: 2100000, guid: 7d22391310f637e449a39f18305a688e, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Brick Alpha
+    second: {fileID: 2800000, guid: 653617d9085a2424ebe80fb0372c011a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Brick Specular Map
+    second: {fileID: 2800000, guid: f2554fb8cc3928c44af9b39577c23573, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bigleaf3
+    second: {fileID: 2800000, guid: b161f2c3559be484d838e6f5360f7d70, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: canstockphoto56946637
+    second: {fileID: 2800000, guid: c1f04a07519d75348a4dacfc7b592975, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: flower6p
+    second: {fileID: 2800000, guid: 8c61e2294f1df154d89b5a271a1c09b7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: garlic
+    second: {fileID: 2800000, guid: e27c9332e7d536a45b79a4cfbdecb3be, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: oakleaf
+    second: {fileID: 2800000, guid: 951c36879340b084ebfbc8a4da78caa4, type: 3}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
