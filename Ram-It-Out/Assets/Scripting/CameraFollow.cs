@@ -6,25 +6,32 @@ public class CameraFollow : MonoBehaviour
 {
     public GameObject Player;
     public GameObject Camera;
-    public Vector3 Position;
+    Vector3 Position;
+    Quaternion Rotation;
+    float playerRotation;
     Vector3 cameraOffset;
+    Quaternion cameraRotation;
 
     // Start is called before the first frame update
     void Start()
     {
-        cameraOffset = new Vector3 (0, 50, -100);
+        cameraOffset = new Vector3 (0, 100, -400);
+        //cameraRotation = 
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Camera.transform.position);
+
     }
     void LateUpdate()
     {
         Position = Player.transform.position;
+        playerRotation = Player.transform.eulerAngles.y;
+        Rotation = Quaternion.Euler(0, playerRotation, 0);
         
         Camera.transform.position = Position + cameraOffset;
-        Camera.transform.rotation = Player.transform.rotation;
+        Camera.transform.LookAt(Player.transform);
+        //Camera.transform.rotation = Rotation;
     }
 }
