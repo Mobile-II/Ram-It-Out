@@ -20,7 +20,8 @@ public class JumpingBox : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        //if ()
+        var targetObject = collision.gameObject.name;
+        if (targetObject == "Player")
         {
             Player.AddForce(transform.up * thrust, ForceMode.Impulse);
             Player.useGravity = true;

@@ -9,7 +9,7 @@ public class SpeedUpTrap : MonoBehaviour
     public GameObject SpeedTop;
     public GameObject SpeedBottom;
     public float thrust;
-    public List<Rigidbody> Boxes;
+    public Rigidbody Boxes;
 
     // Start is called before the first frame update
     void Start()
@@ -24,10 +24,26 @@ public class SpeedUpTrap : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        //if()
+        var targetObject = collision.gameObject.name;
+        if (targetObject == "SpeedtoUp")
         {
-            //Boxes.AddForce(transform.up * thrust, ForceMode.Impulse);
-           // Player.useGravity = true;
+            Boxes.AddForce(transform.up * thrust, ForceMode.Impulse);
+            Boxes.useGravity = true;
+        }
+        if (targetObject == "SpeedtoLeft")
+        {
+            Boxes.AddForce(transform.up * thrust, ForceMode.Impulse);
+            Boxes.useGravity = true;
+        }
+        if (targetObject == "SpeedtoRight")
+        {
+            Boxes.AddForce(transform.up * thrust, ForceMode.Impulse);
+            Boxes.useGravity = true;
+        }
+        if (targetObject == "SpeedtoDown")
+        {
+            Boxes.AddForce(transform.up * thrust, ForceMode.Impulse);
+            Boxes.useGravity = true;
         }
     }
 }
