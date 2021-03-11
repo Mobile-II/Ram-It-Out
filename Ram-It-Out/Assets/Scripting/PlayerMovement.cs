@@ -60,11 +60,11 @@ public class PlayerMovement : MonoBehaviour
     }
     void FixedUpdate()
     {
-        float x = CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * 100.0f;
+        float y = CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * 100.0f;
         float z = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * 155.0f;
 
         // Rotate & walking
-        transform.Rotate(0, x, 0);
+        transform.Rotate(0, y, 0);
         transform.Translate(0, 0, z);
     }
     void OnCollisionEnter(Collision collision)
