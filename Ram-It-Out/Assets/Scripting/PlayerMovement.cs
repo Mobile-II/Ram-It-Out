@@ -24,10 +24,10 @@ public class PlayerMovement : MonoBehaviour
         jumpCount = jumpMax;
         limitTime = 0f;
         playerRB = GetComponent<Rigidbody>();
-        playerRB.constraints = RigidbodyConstraints.FreezePositionX | 
-                               RigidbodyConstraints.FreezeRotationX | 
-                               RigidbodyConstraints.FreezeRotationY | 
-                               RigidbodyConstraints.FreezeRotationZ;
+       // playerRB.constraints = RigidbodyConstraints.FreezePositionX | 
+       //                        RigidbodyConstraints.FreezeRotationX | 
+       //                        RigidbodyConstraints.FreezeRotationY | 
+       //                        RigidbodyConstraints.FreezeRotationZ;
     }
 
     // Update is called once per frame
@@ -49,11 +49,20 @@ public class PlayerMovement : MonoBehaviour
                 {
                     pushingBox = true;
                 }
-                else
+            }
+        }
+        //if (textFile.text == "Push" && pushingBox == true)
+        {
+            //textFile.text = "Release";
+        }
+        //if (textFile.text == "Release")
+        {
+            //if (CrossPlatformInputManager.GetButton("Fire1"))
+            {
+               // if (pushingBox == true)
                 {
-                    pushingBox = false;
+                 //   pushingBox = false;
                 }
-
             }
         }
         CountDown();
