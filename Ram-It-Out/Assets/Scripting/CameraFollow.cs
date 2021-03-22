@@ -10,13 +10,11 @@ public class CameraFollow : MonoBehaviour
     Quaternion Rotation;
     float playerRotation;
     Vector3 cameraOffset;
-    Quaternion cameraRotation;
 
     // Start is called before the first frame update
     void Start()
     {
         cameraOffset = new Vector3 (0, 100, -400);
-        //cameraRotation = 
     }
 
     // Update is called once per frame
@@ -32,6 +30,6 @@ public class CameraFollow : MonoBehaviour
         
         Camera.transform.position = Position + cameraOffset;
         Camera.transform.LookAt(Player.transform);
-        //Camera.transform.rotation = Rotation;
+        Camera.transform.RotateAround(Player.transform.position, Vector3.up, playerRotation);
     }
 }

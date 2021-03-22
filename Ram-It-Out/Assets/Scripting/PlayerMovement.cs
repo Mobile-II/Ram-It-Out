@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody playerRB;      // Player RigidBody
     public Text textFile;           // Get UI Text
-    public bool pushingBox;                // Enable to pull or push
+    public bool pushingBox;         // Enable to pull or push
     bool jumpingLimit;              // Trigger jumping timer
     bool pushingActive;             // Trigger to when near box
     int jumpCount;                  // Current jump count
@@ -24,10 +24,10 @@ public class PlayerMovement : MonoBehaviour
         jumpCount = jumpMax;
         limitTime = 0f;
         playerRB = GetComponent<Rigidbody>();
-       // playerRB.constraints = RigidbodyConstraints.FreezePositionX | 
-       //                        RigidbodyConstraints.FreezeRotationX | 
-       //                        RigidbodyConstraints.FreezeRotationY | 
-       //                        RigidbodyConstraints.FreezeRotationZ;
+        playerRB.constraints = RigidbodyConstraints.FreezePositionX | 
+                               RigidbodyConstraints.FreezeRotationX | 
+                               RigidbodyConstraints.FreezeRotationY | 
+                               RigidbodyConstraints.FreezeRotationZ;
     }
 
     // Update is called once per frame
@@ -51,26 +51,26 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
-        //if (textFile.text == "Push" && pushingBox == true)
+        if (textFile.text == "Push" && pushingBox == true)
         {
-            //textFile.text = "Release";
+            textFile.text = "Release";
         }
-        //if (textFile.text == "Release")
+        if (textFile.text == "Release")
         {
-            //if (CrossPlatformInputManager.GetButton("Fire1"))
-            {
-               // if (pushingBox == true)
-                {
+            if (CrossPlatformInputManager.GetButton("Fire1"))
+            {   
+               if (pushingBox == true)
+               {
                  //   pushingBox = false;
-                }
+               }
             }
         }
         CountDown();
     }
     void FixedUpdate()
     {
-        float y = CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * 100.0f;
-        float z = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * 155.0f;
+        float y = CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * 80.0f;
+        float z = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * 355.0f;
 
         // Rotate & walking
         transform.Rotate(0, y, 0);
