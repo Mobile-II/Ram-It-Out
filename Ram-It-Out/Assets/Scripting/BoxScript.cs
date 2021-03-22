@@ -33,5 +33,10 @@ public class BoxScript : MonoBehaviour
                 Box.transform.position = Player.transform.position;
             }
         }
+        if(playerScript.pushingBox == false)
+        {
+            EnableFixing = false;
+            Box.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        }
     }
 }

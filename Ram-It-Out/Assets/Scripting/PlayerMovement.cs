@@ -59,9 +59,9 @@ public class PlayerMovement : MonoBehaviour
         {
             if (CrossPlatformInputManager.GetButton("Fire1"))
             {   
-               if (pushingBox == true)
+               if (pushingActive == false)
                {
-                 //   pushingBox = false;
+                    pushingBox = false;
                }
             }
         }
@@ -94,6 +94,14 @@ public class PlayerMovement : MonoBehaviour
         {
             textFile.text = "Push";
             pushingActive = true;
+        }
+        if (targetObject == "PushBox")
+        {
+            if (textFile.text == "Release")
+            {
+                textFile.text = "Push";
+                pushingActive = false;
+            }
         }
     }
     void OnTriggerExit(Collider Boxes)
