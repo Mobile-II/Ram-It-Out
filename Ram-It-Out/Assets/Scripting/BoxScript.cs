@@ -6,14 +6,17 @@ public class BoxScript : MonoBehaviour
 {
     public GameObject Player;
     public GameObject Box;
-    Vector3 FixingPosition;
-    bool EnableFixing;
+    public Vector3 CurrentPosition;
     
     // Start is called before the first frame update
     void Start()
     {
-        FixingPosition = new Vector3(0, 0, 100);
-        EnableFixing = false;
+        CurrentPosition = Box.transform.position;
+        
+    }
+    void Update()
+    {
+
     }
 
     // Update is called once per frame
@@ -22,21 +25,11 @@ public class BoxScript : MonoBehaviour
         var playerScript = Player.GetComponent<PlayerMovement>();
         if (playerScript.pushingBox == true)
         {
-            EnableFixing = true;
-            if (EnableFixing == true)
-            {
-                Box.transform.position = Player.transform.position + FixingPosition;
-                EnableFixing = false;
-            }
-            else
-            {
-                Box.transform.position = Player.transform.position;
-            }
+            Box.transform.position = Player.transform.position + CurrentPosition;
         }
-        if(playerScript.pushingBox == false)
+        else
         {
-            EnableFixing = false;
-            Box.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            Box.transform.position = new Vector3(transform.position.z,transform.position.y,transform.position.z);
         }
     }
 }

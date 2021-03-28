@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Text textFile;           // Get UI Text
     public bool pushingBox;         // Enable to pull or push
     bool jumpingLimit;              // Trigger jumping timer
-    bool pushingActive;             // Trigger to when near box
+    public bool pushingActive;             // Trigger to when near box
     int jumpCount;                  // Current jump count
     int jumpMax = 1;                // Maximum jump count
     float limitTime;                // Jumping timer
@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         //Jump Button
         if (textFile.text == "Jump")
         {
+            pushingBox = false;
             if (CrossPlatformInputManager.GetButton("Fire1"))
             {
                 PlayerJump();
@@ -57,15 +58,20 @@ public class PlayerMovement : MonoBehaviour
         }
         if (textFile.text == "Release")
         {
+            pushingBox = true;
             if (CrossPlatformInputManager.GetButton("Fire1"))
-            {   
-               if (pushingActive == false)
-               {
+            {
+                if (pushingActive == true)
+                {
                     pushingBox = false;
-               }
+                    pushingActive = false;
+                    //textFile.text = "Push";
+                }
             }
         }
         CountDown();
+        Debug.Log(pushingActive);
+        Debug.Log(pushingBox);
     }
     void FixedUpdate()
     {
