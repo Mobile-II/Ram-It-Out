@@ -11,37 +11,44 @@ public class PlayerMovement : MonoBehaviour
     public bool pushingBox;         // Enable to pull or push
     bool jumpingLimit;              // Trigger jumping timer
     public bool pushingActive;             // Trigger to when near box
+    bool jumpActive;
     int jumpCount;                  // Current jump count
     int jumpMax = 1;                // Maximum jump count
     float limitTime;                // Jumping timer
-    
+    public GameObject buttonJump;
+    public GameObject buttonPush;
+    public GameObject buttonRelease;
+
     // Start is called before the first frame update
     void Start()
     {
+        buttonJump.SetActive(true);
+        buttonRelease.SetActive(false);
+        buttonPush.SetActive(false);
+        
+
         jumpingLimit = false;
         pushingActive = false;
         pushingBox = false;
         jumpCount = jumpMax;
         limitTime = 0f;
         playerRB = GetComponent<Rigidbody>();
-        playerRB.constraints = RigidbodyConstraints.FreezePositionX | 
-                               RigidbodyConstraints.FreezeRotationX | 
-                               RigidbodyConstraints.FreezeRotationY | 
+        playerRB.constraints = RigidbodyConstraints.FreezePositionX |
+                               RigidbodyConstraints.FreezeRotationX |
+                               RigidbodyConstraints.FreezeRotationY |
                                RigidbodyConstraints.FreezeRotationZ;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Button buttonJumpActive = buttonJump.GetComponent<Button>();
+        Button buttonReleaseActive = buttonRelease.GetComponent<Button>();
+        Button buttonPushActive = buttonRelease.GetComponent<Button>();
+        
         //Jump Button
-        if (textFile.text == "Jump")
-        {
-            pushingBox = false;
-            if (CrossPlatformInputManager.GetButton("Fire1"))
-            {
-                PlayerJump();
-            }
-        }
+        buttonJumpActive.onClick.AddListener(PlayerJump);
+
         if (textFile.text == "Push")
         {
             if (CrossPlatformInputManager.GetButton("Fire1"))
@@ -64,14 +71,10 @@ public class PlayerMovement : MonoBehaviour
                 if (pushingActive == true)
                 {
                     pushingBox = false;
-                    pushingActive = false;
-                    //textFile.text = "Push";
                 }
             }
         }
         CountDown();
-        Debug.Log(pushingActive);
-        Debug.Log(pushingBox);
     }
     void FixedUpdate()
     {
@@ -95,33 +98,27 @@ public class PlayerMovement : MonoBehaviour
     void OnTriggerEnter(Collider Boxes)
     {
         // Enable pushing function
-        var targetObject = Boxes.gameObject.name;
-        if (targetObject == "PushBox")
+        var targetObject = Boxes.gameObject.tag;
+        if (targetObject == "Box")
         {
-            textFile.text = "Push";
-            pushingActive = true;
-        }
-        if (targetObject == "PushBox")
-        {
-            if (textFile.text == "Release")
-            {
-                textFile.text = "Push";
-                pushingActive = false;
-            }
-        }
+            buttonJump.SetActive(false);
+            buttonRelease.SetActive(false);
+            buttonPush.SetActive(true);
+        }      
     }
     void OnTriggerExit(Collider Boxes)
     {
         //Disable pushing function
-        var targetObject = Boxes.gameObject.name;
-        if (targetObject == "PushBox")
+        var targetObject = Boxes.gameObject.tag;
+        if (targetObject == "Box")
         {
-            textFile.text = "Jump";
-            pushingActive = false;
+            buttonJump.SetActive(true);
+            buttonRelease.SetActive(false);
+            buttonPush.SetActive(false);
         }
     }
     // Player Jump
-    void PlayerJump()
+    public void PlayerJump()
     {
         if (jumpCount >= 1)
         {

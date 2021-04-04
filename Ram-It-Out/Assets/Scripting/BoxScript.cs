@@ -6,13 +6,11 @@ public class BoxScript : MonoBehaviour
 {
     public GameObject Player;
     public GameObject Box;
-    public Vector3 CurrentPosition;
+    Vector3 PlayerMovement;
     
     // Start is called before the first frame update
     void Start()
-    {
-        CurrentPosition = Box.transform.position;
-        
+    {       
     }
     void Update()
     {
@@ -20,16 +18,20 @@ public class BoxScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void FixedUpdate()
     {
+        Rigidbody PlayerRB = Player.GetComponent<Rigidbody>();
+        Rigidbody BoxRB = Box.GetComponent<Rigidbody>();
+
         var playerScript = Player.GetComponent<PlayerMovement>();
         if (playerScript.pushingBox == true)
         {
-            Box.transform.position = Player.transform.position + CurrentPosition;
+            PlayerMovement = PlayerRB.velocity;
+            BoxRB.MovePosition(Box.transform.position + PlayerMovement*Time.deltaTime*15f);
         }
         else
         {
-            Box.transform.position = new Vector3(transform.position.z,transform.position.y,transform.position.z);
+            //Box.transform.position = new Vector3(transform.position.z,transform.position.y,transform.position.z);
         }
     }
 }
