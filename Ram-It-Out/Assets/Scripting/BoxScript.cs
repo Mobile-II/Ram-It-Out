@@ -8,13 +8,16 @@ public class BoxScript : MonoBehaviour
     public GameObject Player;
     public GameObject Box;
     Vector3 PlayerMovement;
+    Vector3 pInitialPosition;
     Vector3 InitialPlace;
+    bool playerPosition;
     
     // Start is called before the first frame update
     void Start()
     {
         //Get transform position from box position and only get in start
         InitialPlace = Box.GetComponent<Transform>().transform.position;
+        playerPosition = true;
     }
 
 
@@ -33,13 +36,23 @@ public class BoxScript : MonoBehaviour
         var playerScript = Player.GetComponent<PlayerMovement>();
         if (playerScript.pushingBox == true)
         {
-            PlayerMovement = PlayerRB.velocity;
-            BoxRB.MovePosition(InitialPlace + PlayerMovement*Time.deltaTime*15f);
+            
+            PlayerMovement = PlayerRB.transform.localPosition - pInitialPosition;
+            BoxRB.MovePosition(InitialPlace + PlayerMovement);
         }
-        else
+        //else
         {
             //Box.transform.position = new Vector3(transform.position.z,transform.position.y,transform.position.z);
         }
+        PlayerInitialPosition();
     }
-    
+
+    void PlayerInitialPosition()
+    {
+        if (playerPosition == true)
+        {
+            pInitialPosition = Player.transform.position;
+            playerPosition = false;
+        }
+    }
 }
