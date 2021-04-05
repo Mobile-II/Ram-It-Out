@@ -17,7 +17,7 @@ public class BoxScript : MonoBehaviour
     {
         //Get transform position from box position and only get in start
         InitialPlace = Box.GetComponent<Transform>().transform.position;
-        playerPosition = true;
+        playerPosition = false;
     }
 
 
@@ -40,10 +40,6 @@ public class BoxScript : MonoBehaviour
             PlayerMovement = PlayerRB.transform.localPosition - pInitialPosition;
             BoxRB.MovePosition(InitialPlace + PlayerMovement);
         }
-        //else
-        {
-            //Box.transform.position = new Vector3(transform.position.z,transform.position.y,transform.position.z);
-        }
         PlayerInitialPosition();
     }
 
@@ -54,5 +50,18 @@ public class BoxScript : MonoBehaviour
             pInitialPosition = Player.transform.position;
             playerPosition = false;
         }
+    }
+    public void BoxMoveable()
+    {
+        var playerScript = Player.GetComponent<PlayerMovement>();
+        Rigidbody BoxRB = Box.GetComponent<Rigidbody>();
+        BoxRB.isKinematic = false;
+        playerScript.pushingBox = true;
+        playerPosition = true;
+    }
+    public void BoxStop()
+    {
+        var playerScript = Player.GetComponent<PlayerMovement>();
+        playerScript.pushingBox = false;
     }
 }

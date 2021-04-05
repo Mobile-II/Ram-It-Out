@@ -23,8 +23,12 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         buttonJump.SetActive(true);
+        buttonJump.GetComponent<Image>().enabled = true;
+        //buttonJump.GetComponent<Text>().enabled = false;
         buttonRelease.SetActive(false);
+        buttonRelease.GetComponent<Image>().enabled = false;
         buttonPush.SetActive(false);
+        buttonPush.GetComponent<Image>().enabled = false;
         
 
         jumpingLimit = false;
@@ -49,31 +53,31 @@ public class PlayerMovement : MonoBehaviour
         //Jump Button
         buttonJumpActive.onClick.AddListener(PlayerJump);
 
-        if (textFile.text == "Push")
-        {
-            if (CrossPlatformInputManager.GetButton("Fire1"))
-            {
-                if (pushingActive == true)
-                {
-                    pushingBox = true;
-                }
-            }
-        }
-        if (textFile.text == "Push" && pushingBox == true)
-        {
-            textFile.text = "Release";
-        }
-        if (textFile.text == "Release")
-        {
-            pushingBox = true;
-            if (CrossPlatformInputManager.GetButton("Fire1"))
-            {
-                if (pushingActive == true)
-                {
-                    pushingBox = false;
-                }
-            }
-        }
+        //if (textFile.text == "Push")
+        //{
+        //    if (CrossPlatformInputManager.GetButton("Fire1"))
+        //    {
+        //        if (pushingActive == true)
+        //        {
+        //            pushingBox = true;
+        //        }
+        //    }
+        //}
+        //if (textFile.text == "Push" && pushingBox == true)
+        //{
+        //    textFile.text = "Release";
+        //}
+        //if (textFile.text == "Release")
+        //{
+        //    pushingBox = true;
+        //    if (CrossPlatformInputManager.GetButton("Fire1"))
+        //    {
+        //        if (pushingActive == true)
+        //        {
+        //            pushingBox = false;
+        //        }
+        //    }
+        //}
         CountDown();
     }
     void FixedUpdate()
@@ -95,26 +99,31 @@ public class PlayerMovement : MonoBehaviour
             jumpingLimit = false;
         }
     }
-    void OnTriggerEnter(Collider Boxes)
+    public void OnTriggerEnter(Collider Boxes)
     {
         // Enable pushing function
         var targetObject = Boxes.gameObject.tag;
         if (targetObject == "Box")
         {
             buttonJump.SetActive(false);
+            buttonJump.GetComponent<Image>().enabled = false;
             buttonRelease.SetActive(false);
             buttonPush.SetActive(true);
-        }      
+            buttonPush.GetComponent<Image>().enabled = true;
+        }
     }
     void OnTriggerExit(Collider Boxes)
     {
+        Debug.Log("Exit");
         //Disable pushing function
         var targetObject = Boxes.gameObject.tag;
         if (targetObject == "Box")
         {
             buttonJump.SetActive(true);
+            buttonJump.GetComponent<Image>().enabled = true;
             buttonRelease.SetActive(false);
             buttonPush.SetActive(false);
+            buttonPush.GetComponent<Image>().enabled = false;
         }
     }
     // Player Jump

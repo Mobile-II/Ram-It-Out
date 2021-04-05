@@ -15,4 +15,9 @@ public class PushBox : MonoBehaviour
     {
         
     }
+
+    void OnPush()
+    {
+        
+    }
 }
