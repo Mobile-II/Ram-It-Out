@@ -53,31 +53,7 @@ public class PlayerMovement : MonoBehaviour
         //Jump Button
         buttonJumpActive.onClick.AddListener(PlayerJump);
 
-        //if (textFile.text == "Push")
-        //{
-        //    if (CrossPlatformInputManager.GetButton("Fire1"))
-        //    {
-        //        if (pushingActive == true)
-        //        {
-        //            pushingBox = true;
-        //        }
-        //    }
-        //}
-        //if (textFile.text == "Push" && pushingBox == true)
-        //{
-        //    textFile.text = "Release";
-        //}
-        //if (textFile.text == "Release")
-        //{
-        //    pushingBox = true;
-        //    if (CrossPlatformInputManager.GetButton("Fire1"))
-        //    {
-        //        if (pushingActive == true)
-        //        {
-        //            pushingBox = false;
-        //        }
-        //    }
-        //}
+        Debug.Log(pushingBox);
         CountDown();
     }
     void FixedUpdate()
@@ -105,16 +81,27 @@ public class PlayerMovement : MonoBehaviour
         var targetObject = Boxes.gameObject.tag;
         if (targetObject == "Box")
         {
-            buttonJump.SetActive(false);
-            buttonJump.GetComponent<Image>().enabled = false;
-            buttonRelease.SetActive(false);
-            buttonPush.SetActive(true);
-            buttonPush.GetComponent<Image>().enabled = true;
+            if (pushingBox == false)
+            {
+                buttonJump.SetActive(false);
+                buttonJump.GetComponent<Image>().enabled = false;
+                buttonPush.SetActive(true);
+                buttonPush.GetComponent<Image>().enabled = true;
+            }
+            if (pushingBox == true)
+            {
+                buttonPush.SetActive(false);
+                buttonPush.GetComponent<Image>().enabled = false;
+                buttonRelease.SetActive(true);
+                buttonRelease.GetComponent<Image>().enabled = false;
+                buttonJump.SetActive(false);
+                buttonJump.GetComponent<Image>().enabled = false;
+            }
         }
     }
     void OnTriggerExit(Collider Boxes)
     {
-        Debug.Log("Exit");
+        
         //Disable pushing function
         var targetObject = Boxes.gameObject.tag;
         if (targetObject == "Box")
@@ -122,8 +109,10 @@ public class PlayerMovement : MonoBehaviour
             buttonJump.SetActive(true);
             buttonJump.GetComponent<Image>().enabled = true;
             buttonRelease.SetActive(false);
+            buttonRelease.GetComponent<Image>().enabled = false;
             buttonPush.SetActive(false);
             buttonPush.GetComponent<Image>().enabled = false;
+            pushingBox = false;
         }
     }
     // Player Jump
