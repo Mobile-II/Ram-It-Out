@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Text textFile;           // Get UI Text
     public bool pushingBox;         // Enable to pull or push
     bool jumpingLimit;              // Trigger jumping timer
-    public bool pushingActive;             // Trigger to when near box
+    public bool pushingActive;      // Trigger to when near box
     bool jumpActive;
     int jumpCount;                  // Current jump count
     int jumpMax = 1;                // Maximum jump count
@@ -52,8 +52,6 @@ public class PlayerMovement : MonoBehaviour
         
         //Jump Button
         buttonJumpActive.onClick.AddListener(PlayerJump);
-
-        Debug.Log(pushingBox);
         CountDown();
     }
     void FixedUpdate()

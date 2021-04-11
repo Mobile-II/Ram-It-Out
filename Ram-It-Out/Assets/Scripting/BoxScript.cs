@@ -14,6 +14,7 @@ public class BoxScript : MonoBehaviour
     bool playerPosition;
     Rigidbody PlayerRB;
     private Rigidbody BoxRB;
+    public bool isSpeedUp;
     
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class BoxScript : MonoBehaviour
         PlayerRB = Player.GetComponent<Rigidbody>();
         BoxRB = Box.GetComponent<Rigidbody>();
         playerPosition = false;
+        isSpeedUp = false;
     }
     
     void Update()
@@ -37,7 +39,7 @@ public class BoxScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //float playerRotation = Player.transform.eulerAngles.y;
+        float playerRotation = Player.transform.eulerAngles.y;
 
         var playerScript = Player.GetComponent<PlayerMovement>();
         if (playerScript.pushingBox == true)
@@ -55,7 +57,7 @@ public class BoxScript : MonoBehaviour
         if (playerPosition == true)
         {
             pInitialPosition = Player.transform.position;
-            //pInitialRotation = Player.transform.eulerAngles;
+            pInitialRotation = Player.transform.eulerAngles;
             playerPosition = false;
         }
     }
