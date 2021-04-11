@@ -18,8 +18,8 @@ public class BreakPath : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        var targetObject = collision.gameObject.name.Equals("Box");
-        var confirmTarget = collision.gameObject.name.Equals("");
+        var targetObject = collision.gameObject.tag.Equals("Box");
+        var confirmTarget = collision.gameObject.tag.Equals("");
         if (targetObject == confirmTarget)
         {
             Instantiate(DestroyObjectVersion, transform.position, transform.rotation);
