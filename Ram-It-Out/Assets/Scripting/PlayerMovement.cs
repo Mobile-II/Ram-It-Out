@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     bool jumpingLimit;              // Trigger jumping timer
     public bool pushingActive;      // Trigger to when near box
     bool jumpActive;
+    public bool triggerTrap;
     int jumpCount;                  // Current jump count
     int jumpMax = 1;                // Maximum jump count
     float limitTime;                // Jumping timer
@@ -34,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
         jumpingLimit = false;
         pushingActive = false;
         pushingBox = false;
+        triggerTrap = false;
         jumpCount = jumpMax;
         limitTime = 0f;
         playerRB = GetComponent<Rigidbody>();
@@ -77,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // Enable pushing function
         var targetObject = Boxes.gameObject.tag;
+        var playerPoint = Boxes.gameObject.tag;
         if (targetObject == "Box")
         {
             if (pushingBox == false)
@@ -95,6 +98,10 @@ public class PlayerMovement : MonoBehaviour
                 buttonJump.SetActive(false);
                 buttonJump.GetComponent<Image>().enabled = false;
             }
+        }
+        if (playerPoint == "Trap")
+        {
+            triggerTrap = true;
         }
     }
     void OnTriggerExit(Collider Boxes)
