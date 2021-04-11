@@ -112,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
             buttonRelease.GetComponent<Image>().enabled = false;
             buttonPush.SetActive(false);
             buttonPush.GetComponent<Image>().enabled = false;
-            pushingBox = false;
+            //pushingBox = false;
         }
     }
     // Player Jump

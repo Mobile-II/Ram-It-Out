@@ -10,6 +10,7 @@ public class BoxScript : MonoBehaviour
     Vector3 PlayerMovement;
     Vector3 pInitialPosition;
     Vector3 InitialPlace;
+    Vector3 pInitialRotation;
     bool playerPosition;
     Rigidbody PlayerRB;
     private Rigidbody BoxRB;
@@ -36,14 +37,15 @@ public class BoxScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float playerRotation = Player.transform.eulerAngles.y;
+        //float playerRotation = Player.transform.eulerAngles.y;
 
         var playerScript = Player.GetComponent<PlayerMovement>();
         if (playerScript.pushingBox == true)
         {
             PlayerMovement = PlayerRB.transform.localPosition - pInitialPosition;
+            //PlayerRotationMovement = Player.transform.localRotation - playerRotation;
             BoxRB.MovePosition(InitialPlace + PlayerMovement);
-            Box.transform.RotateAround(Player.transform.position, Vector3.up, playerRotation*0.5f);
+            //Box.transform.RotateAround(Player.transform.position, Vector3.up, playerRotation*0.5f);
         }
         PlayerInitialPosition();
     }
@@ -53,6 +55,7 @@ public class BoxScript : MonoBehaviour
         if (playerPosition == true)
         {
             pInitialPosition = Player.transform.position;
+            //pInitialRotation = Player.transform.eulerAngles;
             playerPosition = false;
         }
     }
