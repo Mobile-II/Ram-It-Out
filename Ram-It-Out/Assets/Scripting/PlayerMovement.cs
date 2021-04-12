@@ -99,10 +99,6 @@ public class PlayerMovement : MonoBehaviour
                 buttonJump.GetComponent<Image>().enabled = false;
             }
         }
-        if (playerPoint == "Trap")
-        {
-            triggerTrap = true;
-        }
     }
     void OnTriggerExit(Collider Boxes)
     {
