@@ -14,6 +14,7 @@ public class SpawningPoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Disable savepoint trigger
         triggerSavePoint = false;
         TriggerTrap = Trap.GetComponent<TrapScript>().triggerTrap;
     }
@@ -24,16 +25,17 @@ public class SpawningPoint : MonoBehaviour
         SavePoint();
         if (TriggerTrap == true);
     }
-
+    // Detect collision for player to trigger save point
     void OnTriggerEnter(Collider savePosition)
     {
         var pointTrigger = savePosition.gameObject.tag;
         if (pointTrigger == "Player")
         {
+            //Enable save point trigger
             triggerSavePoint = true;
         }
     }
-
+    //Save player location in save point
     void SavePoint()
     {
         if (triggerSavePoint == true)

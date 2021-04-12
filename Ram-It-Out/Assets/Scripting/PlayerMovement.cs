@@ -22,20 +22,23 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Setting up which button will show up
         buttonJump.SetActive(true);
         buttonJump.GetComponent<Image>().enabled = true;
-        //buttonJump.GetComponent<Text>().enabled = false;
         buttonRelease.SetActive(false);
         buttonRelease.GetComponent<Image>().enabled = false;
         buttonPush.SetActive(false);
         buttonPush.GetComponent<Image>().enabled = false;
         
-
+        //Disable all the boolean for pushing box
+        //Enable the jump action in initial
         jumpingLimit = false;
         pushingActive = false;
         pushingBox = false;
         jumpCount = jumpMax;
         limitTime = 0f;
+        
+        //Fixing player rigidbody when start the game
         playerRB = GetComponent<Rigidbody>();
         playerRB.constraints = RigidbodyConstraints.FreezePositionX |
                                RigidbodyConstraints.FreezeRotationX |
@@ -46,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Get button function
         Button buttonJumpActive = buttonJump.GetComponent<Button>();
         Button buttonReleaseActive = buttonRelease.GetComponent<Button>();
         Button buttonPushActive = buttonRelease.GetComponent<Button>();
@@ -57,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void FixedUpdate()
     {
+        //Get key input for player
         float y = CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * 80.0f;
         float z = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * 355.0f;
 
@@ -76,13 +81,15 @@ public class PlayerMovement : MonoBehaviour
     }
     public void OnTriggerEnter(Collider Boxes)
     {
-        // Enable pushing function
+        //Enable the push and release button when near the trigger
+        // Finding tag for player
         var targetObject = Boxes.gameObject.tag;
         var playerPoint = Boxes.gameObject.tag;
         if (targetObject == "Box")
         {
             if (pushingBox == false)
             {
+                //Enable push button and disable jump button
                 buttonJump.SetActive(false);
                 buttonJump.GetComponent<Image>().enabled = false;
                 buttonPush.SetActive(true);
@@ -90,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
             }
             if (pushingBox == true)
             {
+                //Enable release button and disable push and jump button
                 buttonPush.SetActive(false);
                 buttonPush.GetComponent<Image>().enabled = false;
                 buttonRelease.SetActive(true);
@@ -105,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
         var targetObject = Boxes.gameObject.tag;
         if (targetObject == "Box")
         {
+            //Enable jump button when exit trigger range
             buttonJump.SetActive(true);
             buttonJump.GetComponent<Image>().enabled = true;
             buttonRelease.SetActive(false);
@@ -119,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (jumpCount >= 1)
         {
+            //Player will move upward when press the jump button
             playerRB.AddForce(transform.up * 50, ForceMode.VelocityChange);
             jumpCount -= 1;
             jumpingLimit = true;
@@ -127,6 +137,7 @@ public class PlayerMovement : MonoBehaviour
     // Jump Limit cooldown
     void CountDown()
     {
+        //Doing cooldown to prevent player spamming the jump button
         if (jumpingLimit == true)
         {
             limitTime += Time.deltaTime;
@@ -138,6 +149,7 @@ public class PlayerMovement : MonoBehaviour
             jumpingLimit = false;
         }
     }
+    //Player respawn position if they fall down to trap
     void PlayerRespawn()
     {
         
