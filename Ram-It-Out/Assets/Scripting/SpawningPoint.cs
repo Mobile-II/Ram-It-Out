@@ -7,19 +7,24 @@ public class SpawningPoint : MonoBehaviour
 {
     public Vector3 positionSpawnPoint;
     public bool triggerSavePoint;
-    GameObject Player;
+    bool TriggerTrap;
+    public GameObject Player;
     
     // Start is called before the first frame update
     void Start()
     {
         triggerSavePoint = false;
-        var Trigger = Player.GetComponent<PlayerMovement>().triggerTrap;
+        TriggerTrap = Player.GetComponent<PlayerMovement>().triggerTrap;
     }
 
     // Update is called once per frame
     void Update()
     {
         SavePoint();
+        if (TriggerTrap == true)
+        {
+            Player.transform.position = positionSpawnPoint;
+        }
     }
 
     void OnTriggerEnter(Collider savePosition)
@@ -36,6 +41,7 @@ public class SpawningPoint : MonoBehaviour
         if (triggerSavePoint == true)
         {
             positionSpawnPoint = Player.transform.position;
+            triggerSavePoint = false;
         }
     }
 }

@@ -34,6 +34,11 @@ public class BoxScript : MonoBehaviour
         {
             BoxRB.isKinematic = true;
         }
+        if (isSpeedUp == true)
+        {
+            playerScript.pushingBox = false;
+            BoxRB.transform.position = new Vector3();
+        }
     }
 
     // Update is called once per frame
