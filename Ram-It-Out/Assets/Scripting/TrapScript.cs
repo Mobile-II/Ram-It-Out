@@ -5,21 +5,19 @@ using UnityEngine;
 
 public class TrapScript : MonoBehaviour
 {
-    public GameObject Player;
-
-    bool triggerTrap;
+    public bool triggerTrap;
     // Start is called before the first frame update
     void Start()
     {
-        triggerTrap = Player.GetComponent<PlayerMovement>().triggerTrap;
+        triggerTrap = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(triggerTrap);
     }
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         var playerDetecter = other.gameObject.tag;
         if (playerDetecter == "Player")

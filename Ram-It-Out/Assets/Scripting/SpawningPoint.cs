@@ -8,23 +8,21 @@ public class SpawningPoint : MonoBehaviour
     public Vector3 positionSpawnPoint;
     public bool triggerSavePoint;
     bool TriggerTrap;
+    public GameObject Trap;
     public GameObject Player;
     
     // Start is called before the first frame update
     void Start()
     {
         triggerSavePoint = false;
-        TriggerTrap = Player.GetComponent<PlayerMovement>().triggerTrap;
+        TriggerTrap = Trap.GetComponent<TrapScript>().triggerTrap;
     }
 
     // Update is called once per frame
     void Update()
     {
         SavePoint();
-        if (TriggerTrap == true)
-        {
-            Player.transform.position = positionSpawnPoint;
-        }
+        if (TriggerTrap == true);
     }
 
     void OnTriggerEnter(Collider savePosition)
