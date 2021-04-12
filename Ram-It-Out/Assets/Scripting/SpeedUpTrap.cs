@@ -9,41 +9,44 @@ public class SpeedUpTrap : MonoBehaviour
     public GameObject SpeedTop;
     public GameObject SpeedBottom;
     public float thrust;
+    public GameObject Box;
     public Rigidbody Boxes;
+    public bool isSpeedUp;
+    float timeActivated;
+    float timeCount;
+
 
     // Start is called before the first frame update
     void Start()
     {
         Boxes = GetComponent<Rigidbody>();
+        isSpeedUp = Box.GetComponent<BoxScript>().isSpeedUp;
+        timeActivated = 15.0f;
+        thrust = 100f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (isSpeedUp == true)
+        {
+            timeCount += Time.deltaTime;
+        }
+
+        if (timeCount > timeActivated)
+        {
+            timeCount = 0;
+            isSpeedUp = false;
+        }
     }
     void OnCollisionEnter(Collision collision)
     {
-        var targetObject = collision.gameObject.name;
-        if (targetObject == "SpeedtoUp")
+        var targetObject = collision.gameObject.tag;
+        if (targetObject == "Box")
         {
-            Boxes.AddForce(transform.up * thrust, ForceMode.Impulse);
+            Boxes.AddForce(transform.forward * thrust, ForceMode.Impulse);
             Boxes.useGravity = true;
-        }
-        if (targetObject == "SpeedtoLeft")
-        {
-            Boxes.AddForce(transform.up * thrust, ForceMode.Impulse);
-            Boxes.useGravity = true;
-        }
-        if (targetObject == "SpeedtoRight")
-        {
-            Boxes.AddForce(transform.up * thrust, ForceMode.Impulse);
-            Boxes.useGravity = true;
-        }
-        if (targetObject == "SpeedtoDown")
-        {
-            Boxes.AddForce(transform.up * thrust, ForceMode.Impulse);
-            Boxes.useGravity = true;
+            isSpeedUp = true;
         }
     }
 }

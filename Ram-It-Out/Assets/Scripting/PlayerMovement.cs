@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Text textFile;           // Get UI Text
     public bool pushingBox;         // Enable to pull or push
     bool jumpingLimit;              // Trigger jumping timer
-    public bool pushingActive;             // Trigger to when near box
+    public bool pushingActive;      // Trigger to when near box
     bool jumpActive;
     int jumpCount;                  // Current jump count
     int jumpMax = 1;                // Maximum jump count
@@ -52,33 +52,8 @@ public class PlayerMovement : MonoBehaviour
         
         //Jump Button
         buttonJumpActive.onClick.AddListener(PlayerJump);
-
-        //if (textFile.text == "Push")
-        //{
-        //    if (CrossPlatformInputManager.GetButton("Fire1"))
-        //    {
-        //        if (pushingActive == true)
-        //        {
-        //            pushingBox = true;
-        //        }
-        //    }
-        //}
-        //if (textFile.text == "Push" && pushingBox == true)
-        //{
-        //    textFile.text = "Release";
-        //}
-        //if (textFile.text == "Release")
-        //{
-        //    pushingBox = true;
-        //    if (CrossPlatformInputManager.GetButton("Fire1"))
-        //    {
-        //        if (pushingActive == true)
-        //        {
-        //            pushingBox = false;
-        //        }
-        //    }
-        //}
         CountDown();
+        PlayerRespawn();
     }
     void FixedUpdate()
     {
@@ -103,18 +78,29 @@ public class PlayerMovement : MonoBehaviour
     {
         // Enable pushing function
         var targetObject = Boxes.gameObject.tag;
+        var playerPoint = Boxes.gameObject.tag;
         if (targetObject == "Box")
         {
-            buttonJump.SetActive(false);
-            buttonJump.GetComponent<Image>().enabled = false;
-            buttonRelease.SetActive(false);
-            buttonPush.SetActive(true);
-            buttonPush.GetComponent<Image>().enabled = true;
+            if (pushingBox == false)
+            {
+                buttonJump.SetActive(false);
+                buttonJump.GetComponent<Image>().enabled = false;
+                buttonPush.SetActive(true);
+                buttonPush.GetComponent<Image>().enabled = true;
+            }
+            if (pushingBox == true)
+            {
+                buttonPush.SetActive(false);
+                buttonPush.GetComponent<Image>().enabled = false;
+                buttonRelease.SetActive(true);
+                buttonRelease.GetComponent<Image>().enabled = false;
+                buttonJump.SetActive(false);
+                buttonJump.GetComponent<Image>().enabled = false;
+            }
         }
     }
     void OnTriggerExit(Collider Boxes)
     {
-        Debug.Log("Exit");
         //Disable pushing function
         var targetObject = Boxes.gameObject.tag;
         if (targetObject == "Box")
@@ -122,8 +108,10 @@ public class PlayerMovement : MonoBehaviour
             buttonJump.SetActive(true);
             buttonJump.GetComponent<Image>().enabled = true;
             buttonRelease.SetActive(false);
+            buttonRelease.GetComponent<Image>().enabled = false;
             buttonPush.SetActive(false);
             buttonPush.GetComponent<Image>().enabled = false;
+            //pushingBox = false;
         }
     }
     // Player Jump
@@ -149,5 +137,9 @@ public class PlayerMovement : MonoBehaviour
             limitTime = 0;
             jumpingLimit = false;
         }
+    }
+    void PlayerRespawn()
+    {
+        
     }
 }
