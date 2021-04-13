@@ -50,9 +50,9 @@ public class BoxScript : MonoBehaviour
         if (playerScript.pushingBox == true)
         {
             PlayerMovement = PlayerRB.transform.localPosition - pInitialPosition;
-            //PlayerRotationMovement = Player.transform.localRotation - playerRotation;
+            float PlayerRotationMovement = Player.transform.eulerAngles.y - playerRotation;
             BoxRB.MovePosition(InitialPlace + PlayerMovement);
-            //Box.transform.RotateAround(Player.transform.position, Vector3.up, playerRotation*0.5f);
+            Box.transform.RotateAround(Player.transform.position, Vector3.zero, PlayerRotationMovement);
         }
         PlayerInitialPosition();
     }
