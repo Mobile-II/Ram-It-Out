@@ -859,6 +859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionSpawnPoint: {x: 0, y: 0, z: 0}
+  rotationSpawnPosition: {x: 0, y: 0, z: 0, w: 0}
   triggerSavePoint: 0
   Trap: {fileID: 1787343542}
   Player: {fileID: 431269573}
@@ -1960,6 +1961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerTrap: 0
+  Player: {fileID: 431269573}
 --- !u!65 &1787343544
 BoxCollider:
   m_ObjectHideFlags: 0

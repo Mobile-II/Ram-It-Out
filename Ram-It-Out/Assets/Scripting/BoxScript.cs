@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.Experimental.UIElements;
+using Vector3 = UnityEngine.Vector3;
 
 public class BoxScript : MonoBehaviour
 {
@@ -44,15 +46,15 @@ public class BoxScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float playerRotation = Player.transform.eulerAngles.y;
+        Vector3 playerRotation = Player.transform.eulerAngles;
 
         var playerScript = Player.GetComponent<PlayerMovement>();
         if (playerScript.pushingBox == true)
         {
             PlayerMovement = PlayerRB.transform.localPosition - pInitialPosition;
-            float PlayerRotationMovement = Player.transform.eulerAngles.y - playerRotation;
+            Vector3 PlayerRotationMovement = playerRotation - pInitialRotation;
             BoxRB.MovePosition(InitialPlace + PlayerMovement);
-            Box.transform.RotateAround(Player.transform.position, Vector3.zero, PlayerRotationMovement);
+            Box.transform.RotateAround(Player.transform.position, Vector3.up,PlayerRotationMovement.y);
         }
         PlayerInitialPosition();
     }
