@@ -6,6 +6,7 @@ using UnityEngine;
 public class TrapScript : MonoBehaviour
 {
     public bool triggerTrap;
+    public GameObject Player;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,10 @@ public class TrapScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(triggerTrap);
+        if (triggerTrap == true)
+        {
+            PlayerLose();
+        }
     }
     void OnTriggerEnter(Collider other)
     {
@@ -24,5 +28,9 @@ public class TrapScript : MonoBehaviour
         {
             triggerTrap = true;
         }
+    }
+    void PlayerLose()
+    {
+        Destroy(Player);
     }
 }

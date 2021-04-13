@@ -6,6 +6,7 @@ using UnityEngine;
 public class SpawningPoint : MonoBehaviour
 {
     public Vector3 positionSpawnPoint;
+    public Quaternion rotationSpawnPosition;
     public bool triggerSavePoint;
     bool TriggerTrap;
     public GameObject Trap;
@@ -41,7 +42,12 @@ public class SpawningPoint : MonoBehaviour
         if (triggerSavePoint == true)
         {
             positionSpawnPoint = Player.transform.position;
+            rotationSpawnPosition = Player.transform.rotation;
             triggerSavePoint = false;
         }
+    }
+    public void SpawnPosition()
+    {
+        Instantiate(Player, positionSpawnPoint, rotationSpawnPosition);
     }
 }
