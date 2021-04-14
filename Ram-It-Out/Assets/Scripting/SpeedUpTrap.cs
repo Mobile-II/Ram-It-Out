@@ -19,7 +19,7 @@ public class SpeedUpTrap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Boxes = GetComponent<Rigidbody>();
+        Boxes = Boxes.GetComponent<Rigidbody>();
         isSpeedUp = Box.GetComponent<BoxScript>().isSpeedUp;
         timeActivated = 15.0f;
         thrust = 100f;

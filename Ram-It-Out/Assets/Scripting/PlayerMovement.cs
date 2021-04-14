@@ -152,6 +152,7 @@ public class PlayerMovement : MonoBehaviour
     //Player respawn position if they fall down to trap
     void PlayerRespawn()
     {
-        
+        //Vector3 RespawnPosition = GetComponent<SpawningPoint>().positionSpawnPoint;
+
     }
 }

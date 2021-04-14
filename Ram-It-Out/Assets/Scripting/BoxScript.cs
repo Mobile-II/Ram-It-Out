@@ -54,7 +54,9 @@ public class BoxScript : MonoBehaviour
             PlayerMovement = PlayerRB.transform.localPosition - pInitialPosition;
             Vector3 PlayerRotationMovement = playerRotation - pInitialRotation;
             BoxRB.MovePosition(InitialPlace + PlayerMovement);
-            Box.transform.RotateAround(Player.transform.position, Vector3.up,PlayerRotationMovement.y);
+            //Box.transform.SetParent(Player.transform,true);
+            Box.transform.RotateAround(Player.transform.position, Vector3.up, PlayerRotationMovement.y/10);
+
         }
         PlayerInitialPosition();
     }

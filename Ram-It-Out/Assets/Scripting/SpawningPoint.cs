@@ -48,6 +48,6 @@ public class SpawningPoint : MonoBehaviour
     }
     public void SpawnPosition()
     {
-        Instantiate(Player, positionSpawnPoint, rotationSpawnPosition);
+        //Instantiate(Player, positionSpawnPoint, rotationSpawnPosition);
     }
 }
