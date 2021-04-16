@@ -1,49 +1,36 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SpeedUpTrap : MonoBehaviour
 {
-    public GameObject SpeedLeft;
-    public GameObject SpeedRight;
-    public GameObject SpeedTop;
-    public GameObject SpeedBottom;
+    
     public float thrust;
+    public GameObject Box;
     public Rigidbody Boxes;
+    public BoxScript isSpeeding;
 
     // Start is called before the first frame update
     void Start()
     {
-        Boxes = GetComponent<Rigidbody>();
+        Boxes = Boxes.GetComponent<Rigidbody>();
+        thrust = 500f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        var targetObject = collision.gameObject.name;
-        if (targetObject == "SpeedtoUp")
+        var targetObject = other.gameObject.tag;
+        if (targetObject == "Box")
         {
-            Boxes.AddForce(transform.up * thrust, ForceMode.Impulse);
-            Boxes.useGravity = true;
-        }
-        if (targetObject == "SpeedtoLeft")
-        {
-            Boxes.AddForce(transform.up * thrust, ForceMode.Impulse);
-            Boxes.useGravity = true;
-        }
-        if (targetObject == "SpeedtoRight")
-        {
-            Boxes.AddForce(transform.up * thrust, ForceMode.Impulse);
-            Boxes.useGravity = true;
-        }
-        if (targetObject == "SpeedtoDown")
-        {
-            Boxes.AddForce(transform.up * thrust, ForceMode.Impulse);
-            Boxes.useGravity = true;
+            isSpeeding.DisableMovement();
+            Boxes.AddForce(transform.forward * thrust, ForceMode.Impulse);
         }
     }
+
 }
