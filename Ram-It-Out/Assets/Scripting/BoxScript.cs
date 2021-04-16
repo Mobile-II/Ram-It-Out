@@ -34,16 +34,7 @@ public class BoxScript : MonoBehaviour
     
     void Update()
     {
-        var playerScript = Player.GetComponent<PlayerMovement>();
-        if (playerScript.pushingBox == false)
-        {
-            BoxRB.isKinematic = true;
-        }
-        if (isSpeedUp == true)
-        {
-            playerScript.pushingBox = false;
-            BoxRB.transform.position = new Vector3();
-        }
+        pInitialPosition = Player.transform.position;
     }
 
     // Update is called once per frame
@@ -52,26 +43,17 @@ public class BoxScript : MonoBehaviour
         Vector3 playerRotation = Player.transform.eulerAngles;
 
         var playerScript = Player.GetComponent<PlayerMovement>();
-        if (playerScript.pushingBox == true)
+        if (playerScript.pushingBox == true || isSpeedUp == true)
         {
             PlayerMovement = PlayerRB.transform.localPosition - pInitialPosition;
             Vector3 PlayerRotationMovement = playerRotation - pInitialRotation;
-            BoxRB.velocity = new Vector3(0,0,movementCount.dirZ);
-            BoxRB.rotation = Quaternion.Euler(0,movementCount.dirY,0);
+            BoxRB.MovePosition(InitialPlace + PlayerMovement);
+            //BoxRB.rotation = Quaternion.Euler(0,movementCount.dirY,0);
             //Box.transform.SetParent(Player.transform,true);
             //Box.transform.RotateAround(Player.transform.position, Vector3.up, PlayerRotationMovement.y/10);
-
+            
         }
         PlayerInitialPosition();
-    }
-
-    void OnCollisionEnter(Collision other)
-    {
-        var trapTrigger = other.gameObject.tag;
-        if (trapTrigger == "SpeedUp")
-        {
-            BoxRB.isKinematic = true;
-        }
     }
 
     void PlayerInitialPosition()
@@ -96,5 +78,10 @@ public class BoxScript : MonoBehaviour
         BoxRB.isKinematic = true;
         playerScript.pushingBox = false;
         playerPosition = false;
+    }
+    public void DisableMovement()
+    {
+        isSpeedUp = false;
+        //BoxRB.isKinematic = true;
     }
 }

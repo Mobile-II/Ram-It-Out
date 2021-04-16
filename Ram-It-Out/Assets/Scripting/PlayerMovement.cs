@@ -62,7 +62,6 @@ public class PlayerMovement : MonoBehaviour
         buttonJumpActive.onClick.AddListener(PlayerJump);
         CountDown();
         PlayerRespawn();
-        Debug.Log(dirZ);
     }
     void FixedUpdate()
     {
