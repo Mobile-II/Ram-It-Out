@@ -1,13 +1,8 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Ram-It-Out/Assets/Model/Prefab/UnpassBlock.prefab.meta
-guid: 6bde5b40858f9c14c9684f345705902c
-PrefabImporter:
-=======
-guid: 22dade56808c4ec4099885baec09455a
+guid: 795a15d68f6668a42aef6ef7dcd351a9
 NativeFormatImporter:
->>>>>>> Crimson:Ram-It-Out/Assets/Scenes/CrimsonFile/char_model/theSkin.mat.meta
   externalObjects: {}
-  mainObjectFileID: 2100000
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
