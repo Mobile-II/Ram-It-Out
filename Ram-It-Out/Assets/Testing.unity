@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 286731977}
   m_Layer: 0
   m_Name: SpeedUpPlane
-  m_TagString: Untagged
+  m_TagString: SpeedUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -548,7 +548,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 286731970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 372, y: -61, z: 165}
+  m_LocalPosition: {x: 372, y: -62, z: 165}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
@@ -737,6 +737,9 @@ MonoBehaviour:
   buttonJump: {fileID: 88212752}
   buttonPush: {fileID: 1670611640}
   buttonRelease: {fileID: 679535864}
+  dirX: 0
+  dirY: 0
+  dirZ: 0
 --- !u!65 &431269575
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -803,7 +806,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431269573}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 254, y: -10.2, z: -268}
+  m_LocalPosition: {x: 376, y: -10.2, z: -268}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 525813944}
@@ -1890,7 +1893,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1694867011}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 317, y: -7, z: -17}
+  m_LocalPosition: {x: 370, y: -12, z: -58}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1908,6 +1911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4f54c28c8a5604e8bea3ace3ecc3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementCount: {fileID: 431269574}
   Player: {fileID: 431269573}
   Box: {fileID: 1694867011}
   isSpeedUp: 0
@@ -2028,7 +2032,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1787343542}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 534, y: 5.377819, z: -289}
+  m_LocalPosition: {x: 824, y: 5.377819, z: -289}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}

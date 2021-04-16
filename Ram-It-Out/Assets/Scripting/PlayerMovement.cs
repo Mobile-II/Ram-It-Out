@@ -18,6 +18,10 @@ public class PlayerMovement : MonoBehaviour
     public GameObject buttonJump;
     public GameObject buttonPush;
     public GameObject buttonRelease;
+    public float dirX;
+    public float dirY;
+    public float dirZ;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -58,16 +62,17 @@ public class PlayerMovement : MonoBehaviour
         buttonJumpActive.onClick.AddListener(PlayerJump);
         CountDown();
         PlayerRespawn();
+        Debug.Log(dirZ);
     }
     void FixedUpdate()
     {
         //Get key input for player
-        float y = CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * 80.0f;
-        float z = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * 355.0f;
+        dirY = CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * 80.0f;
+        dirZ = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * 355.0f;
 
         // Rotate & walking
-        transform.Rotate(0, y, 0);
-        transform.Translate(0, 0, z);
+        transform.Rotate(0, dirY, 0);
+        transform.Translate(0, 0, dirZ);
     }
     void OnCollisionEnter(Collision collision)
     {
@@ -120,7 +125,7 @@ public class PlayerMovement : MonoBehaviour
             buttonRelease.GetComponent<Image>().enabled = false;
             buttonPush.SetActive(false);
             buttonPush.GetComponent<Image>().enabled = false;
-            //pushingBox = false;
+            pushingBox = false;
         }
     }
     // Player Jump
