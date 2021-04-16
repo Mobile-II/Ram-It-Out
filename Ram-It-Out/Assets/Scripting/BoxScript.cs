@@ -82,6 +82,5 @@ public class BoxScript : MonoBehaviour
     public void DisableMovement()
     {
         isSpeedUp = false;
-        //BoxRB.isKinematic = true;
     }
 }

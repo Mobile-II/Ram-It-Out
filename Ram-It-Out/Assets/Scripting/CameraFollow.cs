@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,4 +27,5 @@ public class CameraFollow : MonoBehaviour
         Camera.transform.LookAt(Player.transform);
         Camera.transform.RotateAround(Player.transform.position, Vector3.up, playerRotation);
     }
+    
 }
