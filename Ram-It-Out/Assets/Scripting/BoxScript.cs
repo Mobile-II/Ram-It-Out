@@ -30,6 +30,7 @@ public class BoxScript : MonoBehaviour
         BoxRB = Box.GetComponent<Rigidbody>();
         playerPosition = false;
         isSpeedUp = false;
+        BoxRB.isKinematic = true;
     }
     
     void Update()
