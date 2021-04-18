@@ -2066,6 +2066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DestroyObjectVersion: {fileID: 1694867011}
+  Box: {fileID: 1694867017}
 --- !u!65 &1800863681
 BoxCollider:
   m_ObjectHideFlags: 0
