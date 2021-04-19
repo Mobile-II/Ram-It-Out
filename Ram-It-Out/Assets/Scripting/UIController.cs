@@ -10,17 +10,20 @@ public class UIController : MonoBehaviour
     public Button PauseButton;
     public Button PauseMenuButton;
     public Button LevelButton;
+    public Button CreditButton;
 
     ///[SerializeField]
     private bool paused;
     private bool openlevelselection;
     private bool isMute;
+    private bool opencredit;
 
     // Start is called before the first frame update
     void Start()
     {
         paused = false;
         openlevelselection = false;
+        opencredit = false;
     }
 
     // Update is called once per frame
@@ -53,6 +56,20 @@ public class UIController : MonoBehaviour
                 HideLevelSelection();
             }
         }
+
+        if (Input.GetButtonDown("Credit"))
+        {
+            if (!opencredit)
+            {
+                opencredit = true;
+                Displaycreditpanel();
+            }
+            else
+            {
+                opencredit = false;
+                Hidecreditpanel();
+            }
+        }
     }
 
     public void DisplayLevelSelection() //for level selection menu to display
@@ -74,7 +91,18 @@ public class UIController : MonoBehaviour
     {
         PauseMenuButton.gameObject.SetActive(false);
     }
-    
+
+
+    public void Displaycreditpanel() //credit panel show
+    {
+        CreditButton.gameObject.SetActive(true);
+    }
+
+    public void Hidecreditpanel() //credit panel hide
+    {
+        CreditButton.gameObject.SetActive(false);
+    }
+
     public void ButtonQuitToMenu()    //quit to menu
     {
         SceneManager.LoadScene(0);
