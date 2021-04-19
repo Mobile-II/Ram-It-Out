@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3520710}
   m_Layer: 0
   m_Name: SpeedUpPlaform
-  m_TagString: Untagged
+  m_TagString: SpeedUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,9 +62,10 @@ GameObject:
   - component: {fileID: 119268619}
   - component: {fileID: 119268621}
   - component: {fileID: 119268620}
+  - component: {fileID: 1305525563123809007}
   m_Layer: 0
   m_Name: SpeedUpPlatform 1
-  m_TagString: Untagged
+  m_TagString: SpeedUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,6 +129,23 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1305525563123809007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119268618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37909e88642b17341a71195258427c17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 0
+  Box: {fileID: 7862040755632338001, guid: 6aa73658769b6f047980c4d05cf79636, type: 3}
+  Boxes: {fileID: 8107995270227112, guid: 6aa73658769b6f047980c4d05cf79636, type: 3}
+  isSpeeding: {fileID: 8645461993761430821, guid: 6aa73658769b6f047980c4d05cf79636,
+    type: 3}
 --- !u!1 &119564594
 GameObject:
   m_ObjectHideFlags: 0
