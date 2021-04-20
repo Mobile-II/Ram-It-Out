@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4f54c28c8a5604e8bea3ace3ecc3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementCount: {fileID: 9089772295382552654, guid: 611fe132a7c79d04594622b2d592b3b7,
+  movementCount: {fileID: 6172367069748133245, guid: 611fe132a7c79d04594622b2d592b3b7,
     type: 3}
   Player: {fileID: 6061855356451956764, guid: 611fe132a7c79d04594622b2d592b3b7, type: 3}
   Box: {fileID: 7862040755632338001}

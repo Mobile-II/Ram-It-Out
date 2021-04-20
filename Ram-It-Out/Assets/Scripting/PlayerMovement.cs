@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //Get key input for player
         dirY = CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * 32.0f;
-        dirZ = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * 1.55f;
+        dirZ = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * 1.05f;
 
         // Rotate & walking
         transform.Rotate(0, dirY, 0);
@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         // Jump reset when touch floor
-        var objectGround = collision.gameObject.name;
+        var objectGround = collision.gameObject.tag;
         if (objectGround == "Floor")
         {
             jumpCount = jumpMax;
@@ -132,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
         if (jumpCount >= 1)
         {
             //Player will move upward when press the jump button
-            playerRB.AddForce(transform.up * 50, ForceMode.VelocityChange);
+            playerRB.AddForce(transform.up * 5, ForceMode.VelocityChange);
             jumpCount -= 1;
             jumpingLimit = true;
         }
