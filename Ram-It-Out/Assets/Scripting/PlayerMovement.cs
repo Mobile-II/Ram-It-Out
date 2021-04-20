@@ -43,7 +43,6 @@ public class PlayerMovement : MonoBehaviour
         limitTime = 0f;
         
         //Fixing player rigidbody when start the game
-        playerRB = GetComponent<Rigidbody>();
         playerRB.constraints = RigidbodyConstraints.FreezePositionX |
                                RigidbodyConstraints.FreezeRotationX |
                                RigidbodyConstraints.FreezeRotationY |
@@ -66,8 +65,8 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         //Get key input for player
-        dirY = CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * 80.0f;
-        dirZ = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * 355.0f;
+        dirY = CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * 32.0f;
+        dirZ = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * 1.55f;
 
         // Rotate & walking
         transform.Rotate(0, dirY, 0);
