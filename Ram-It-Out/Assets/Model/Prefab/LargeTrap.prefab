@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1171731321}
   - component: {fileID: 1171731320}
   - component: {fileID: 2576767819032221399}
+  - component: {fileID: 2573280866140238119}
   m_Layer: 0
   m_Name: LargeTrap
   m_TagString: Untagged
@@ -110,6 +111,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1973482, y: 0.35862654, z: 0.036220998}
   m_Center: {x: 0.000000029802326, y: -0.000000007450581, z: 0.018110499}
+--- !u!114 &2573280866140238119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171731319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a723b7b40fb15ab48a8d1690b02b4ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerTrap: 0
+  Player: {fileID: 6061855356451956764, guid: 611fe132a7c79d04594622b2d592b3b7, type: 3}
 --- !u!1 &1443000385
 GameObject:
   m_ObjectHideFlags: 0

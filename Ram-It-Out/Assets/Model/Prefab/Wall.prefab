@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 740597310675644045}
   - component: {fileID: 2342543183264223320}
   - component: {fileID: 1586630613273003625}
+  - component: {fileID: 8878825418253590902}
+  - component: {fileID: 6763714250799081098}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -77,3 +79,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &8878825418253590902
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9154403815445982158}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6680654, y: 0.18083803, z: 1.7375861}
+  m_Center: {x: 0, y: -3.0865724e-15, z: 0.8687931}
+--- !u!114 &6763714250799081098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9154403815445982158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef1f98e856f9e524c98c747cbba16d0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestroyObjectVersion: {fileID: 1538996912, guid: 27f215a49df34ec45bc17a1e5fe93f92,
+    type: 3}
+  Box: {fileID: 8645461993761430821, guid: 6aa73658769b6f047980c4d05cf79636, type: 3}

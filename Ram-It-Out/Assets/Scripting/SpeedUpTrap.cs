@@ -15,7 +15,7 @@ public class SpeedUpTrap : MonoBehaviour
     void Start()
     {
         Boxes = Boxes.GetComponent<Rigidbody>();
-        thrust = 500f;
+        thrust = 20f;
     }
 
     // Update is called once per frame

@@ -10,19 +10,19 @@ public class CameraFollow : MonoBehaviour
     Vector3 Position;
     Quaternion Rotation;
     float playerRotation;
-    Vector3 cameraOffset;
+    public Vector3 cameraOffset;
 
     // Start is called before the first frame update
     void Start()
     {
-        cameraOffset = new Vector3 (0, 100, -400);
+        cameraOffset = new Vector3 (0, 0.3f, 0.5f);
     }
     void LateUpdate()
     {
         Position = Player.transform.position;
         playerRotation = Player.transform.eulerAngles.y;
         Rotation = Quaternion.Euler(0, playerRotation, 0);
-        
+
         Camera.transform.position = Position + cameraOffset;
         Camera.transform.LookAt(Player.transform);
         Camera.transform.RotateAround(Player.transform.position, Vector3.up, playerRotation);

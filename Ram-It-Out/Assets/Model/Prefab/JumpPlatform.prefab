@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 254254255}
   - component: {fileID: 254254257}
   - component: {fileID: 254254256}
+  - component: {fileID: 7341808154699139533}
+  - component: {fileID: 4658007243051768959}
   m_Layer: 0
   m_Name: Spring001
   m_TagString: Untagged
@@ -77,6 +79,45 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!54 &7341808154699139533
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254254254}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!145 &4658007243051768959
+SpringJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254254254}
+  m_ConnectedBody: {fileID: 544924467862981961}
+  m_Anchor: {x: 0, y: 0.04452818, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 0.0021582379, y: 0.020177597, z: -0.7018534}
+  serializedVersion: 2
+  m_Spring: 10
+  m_Damper: 0.2
+  m_MinDistance: 0
+  m_MaxDistance: 0
+  m_Tolerance: 0.025
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &1141347789
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JumpingPad: {fileID: 1141347789}
-  Player: {fileID: 0}
+  Player: {fileID: 4769733855835898811, guid: 611fe132a7c79d04594622b2d592b3b7, type: 3}
   thrust: 0
 --- !u!1 &1467994277
 GameObject:
@@ -261,6 +302,7 @@ GameObject:
   - component: {fileID: 1740230432}
   - component: {fileID: 1740230431}
   - component: {fileID: 1673949932}
+  - component: {fileID: 544924467862981961}
   m_Layer: 0
   m_Name: Platform1
   m_TagString: Untagged
@@ -340,3 +382,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.099248275, y: 0.09924829, z: 0.099248245}
   m_Center: {x: 0, y: -0.000000029802322, z: -0.7375669}
+--- !u!54 &544924467862981961
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740230429}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
