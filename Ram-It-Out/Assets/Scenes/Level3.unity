@@ -4989,6 +4989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 6061855356451956764, guid: 611fe132a7c79d04594622b2d592b3b7, type: 3}
   Camera: {fileID: 629614731}
+  cameraOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &632292953
 GameObject:
   m_ObjectHideFlags: 0

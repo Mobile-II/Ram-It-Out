@@ -164,14 +164,14 @@ Animation:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801316197}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: dbafa80b0c58269489ca861a7fe0ed23, type: 3}
   m_Animations:
   - {fileID: 7400000, guid: dbafa80b0c58269489ca861a7fe0ed23, type: 3}
   - {fileID: 7400002, guid: dbafa80b0c58269489ca861a7fe0ed23, type: 3}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!114 &4014993680231460664
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801316197}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a723b7b40fb15ab48a8d1690b02b4ded, type: 3}
   m_Name: 
