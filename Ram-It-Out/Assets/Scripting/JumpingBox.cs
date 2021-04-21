@@ -10,7 +10,7 @@ public class JumpingBox : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        thrust = 100.0f;
+        thrust = 10.0f;
     }
 
     // Update is called once per frame

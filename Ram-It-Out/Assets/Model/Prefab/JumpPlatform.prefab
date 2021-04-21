@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6b558d6843f1145b7934fbf57f30c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpingPad: {fileID: 1141347789}
+  JumpingPad: {fileID: 1467994277}
   Player: {fileID: 2522982903200248622, guid: 611fe132a7c79d04594622b2d592b3b7, type: 3}
   thrust: 0
 --- !u!1 &1740230429
