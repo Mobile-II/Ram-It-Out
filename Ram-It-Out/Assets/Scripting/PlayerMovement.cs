@@ -7,7 +7,6 @@ using UnityStandardAssets.CrossPlatformInput;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody playerRB;      // Player RigidBody
-    public Text textFile;           // Get UI Text
     public bool pushingBox;         // Enable to pull or push
     bool jumpingLimit;              // Trigger jumping timer
     public bool pushingActive;      // Trigger to when near box
@@ -87,7 +86,6 @@ public class PlayerMovement : MonoBehaviour
         //Enable the push and release button when near the trigger
         // Finding tag for player
         var targetObject = Boxes.gameObject.tag;
-        var playerPoint = Boxes.gameObject.tag;
         if (targetObject == "Box")
         {
             if (pushingBox == false)

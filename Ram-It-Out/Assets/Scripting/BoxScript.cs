@@ -49,10 +49,11 @@ public class BoxScript : MonoBehaviour
             PlayerMovement = PlayerRB.transform.localPosition - pInitialPosition;
             Vector3 PlayerRotationMovement = playerRotation - pInitialRotation;
             BoxRB.MovePosition(InitialPlace + PlayerMovement);
+            BoxRB.isKinematic = false;
             //BoxRB.rotation = Quaternion.Euler(0,movementCount.dirY,0);
             //Box.transform.SetParent(Player.transform,true);
             //Box.transform.RotateAround(Player.transform.position, Vector3.up, PlayerRotationMovement.y/10);
-            
+
         }
         PlayerInitialPosition();
     }
@@ -72,6 +73,7 @@ public class BoxScript : MonoBehaviour
         BoxRB.isKinematic = false;
         playerScript.pushingBox = true;
         playerPosition = true;
+        isSpeedUp = true;
     }
     public void BoxStop()
     {

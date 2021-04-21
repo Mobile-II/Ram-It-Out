@@ -916,6 +916,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e516ed951b00a8648832f02acba3a470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &893826844 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 2522982903200248622, guid: 611fe132a7c79d04594622b2d592b3b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1122309955}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &919473366
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1182,6 +1188,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 8645461993761430821, guid: 6aa73658769b6f047980c4d05cf79636,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 893826842}
+    - target: {fileID: 8645461993761430821, guid: 6aa73658769b6f047980c4d05cf79636,
+        type: 3}
+      propertyPath: movementCount
+      value: 
+      objectReference: {fileID: 893826843}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6aa73658769b6f047980c4d05cf79636, type: 3}
 --- !u!1001 &1180097597
@@ -1661,6 +1677,11 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: -0.7018246
       objectReference: {fileID: 0}
+    - target: {fileID: 3446644168374605769, guid: 5cc95266939752042b172a4c52d00b41,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 893826844}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cc95266939752042b172a4c52d00b41, type: 3}
 --- !u!1 &1759335624
