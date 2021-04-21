@@ -392,6 +392,26 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4145518785547963005, guid: 4a2b21971715f5a49b94175676182f95,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1103320712}
+    - target: {fileID: 4145518785547963005, guid: 4a2b21971715f5a49b94175676182f95,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BoxMoveable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4145518786471586877, guid: 4a2b21971715f5a49b94175676182f95,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 708687983}
+    - target: {fileID: 4145518786471586877, guid: 4a2b21971715f5a49b94175676182f95,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BoxStop
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a2b21971715f5a49b94175676182f95, type: 3}
 --- !u!1001 &488378863
@@ -1002,6 +1022,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 367137189}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1103320712 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8645461993761430821, guid: 6aa73658769b6f047980c4d05cf79636,
+    type: 3}
+  m_PrefabInstance: {fileID: 1130719916}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4f54c28c8a5604e8bea3ace3ecc3a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1122309955
 PrefabInstance:
   m_ObjectHideFlags: 0
