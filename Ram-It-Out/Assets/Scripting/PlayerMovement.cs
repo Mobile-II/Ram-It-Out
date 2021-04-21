@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         //Get key input for player
-        dirY = CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * 32.0f;
+        dirY = CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * 52.0f;
         dirZ = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * 1.05f;
 
         // Rotate & walking

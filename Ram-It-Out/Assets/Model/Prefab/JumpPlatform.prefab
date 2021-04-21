@@ -129,8 +129,6 @@ GameObject:
   - component: {fileID: 1141347790}
   - component: {fileID: 1141347792}
   - component: {fileID: 1141347791}
-  - component: {fileID: 150923034}
-  - component: {fileID: 150923033}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -197,34 +195,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &150923034
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1141347789}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.09924828, y: 0.0992483, z: 0.0992483}
-  m_Center: {x: 0, y: -0.000000029802322, z: 0.04962415}
---- !u!114 &150923033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1141347789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f6b558d6843f1145b7934fbf57f30c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  JumpingPad: {fileID: 1141347789}
-  Player: {fileID: 2522982903200248622, guid: 611fe132a7c79d04594622b2d592b3b7, type: 3}
-  thrust: 0
 --- !u!1 &1467994277
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,6 +206,7 @@ GameObject:
   - component: {fileID: 1467994279}
   - component: {fileID: 1467994278}
   - component: {fileID: 2018935317}
+  - component: {fileID: 3446644168374605769}
   m_Layer: 0
   m_Name: JumpPlatform
   m_TagString: Untagged
@@ -285,11 +256,26 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1467994277}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.25, y: 0.25, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0.05}
+--- !u!114 &3446644168374605769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467994277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f6b558d6843f1145b7934fbf57f30c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JumpingPad: {fileID: 1141347789}
+  Player: {fileID: 2522982903200248622, guid: 611fe132a7c79d04594622b2d592b3b7, type: 3}
+  thrust: 0
 --- !u!1 &1740230429
 GameObject:
   m_ObjectHideFlags: 0
