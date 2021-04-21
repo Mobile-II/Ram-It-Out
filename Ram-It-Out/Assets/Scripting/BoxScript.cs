@@ -41,6 +41,7 @@ public class BoxScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Debug.Log(isSpeedUp);
         Vector3 playerRotation = Player.transform.eulerAngles;
 
         var playerScript = Player.GetComponent<PlayerMovement>();
@@ -49,11 +50,11 @@ public class BoxScript : MonoBehaviour
             PlayerMovement = PlayerRB.transform.localPosition - pInitialPosition;
             Vector3 PlayerRotationMovement = playerRotation - pInitialRotation;
             BoxRB.MovePosition(InitialPlace + PlayerMovement);
-            BoxRB.isKinematic = false;
+            
             //BoxRB.rotation = Quaternion.Euler(0,movementCount.dirY,0);
             //Box.transform.SetParent(Player.transform,true);
             //Box.transform.RotateAround(Player.transform.position, Vector3.up, PlayerRotationMovement.y/10);
-
+            
         }
         PlayerInitialPosition();
     }
@@ -74,6 +75,7 @@ public class BoxScript : MonoBehaviour
         playerScript.pushingBox = true;
         playerPosition = true;
         isSpeedUp = true;
+        BoxRB.isKinematic = false;
     }
     public void BoxStop()
     {
