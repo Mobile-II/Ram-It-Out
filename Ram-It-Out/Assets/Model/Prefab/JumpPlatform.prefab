@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JumpingPad: {fileID: 1141347789}
-  Player: {fileID: 4769733855835898811, guid: 611fe132a7c79d04594622b2d592b3b7, type: 3}
+  Player: {fileID: 2522982903200248622, guid: 611fe132a7c79d04594622b2d592b3b7, type: 3}
   thrust: 0
 --- !u!1 &1467994277
 GameObject:
