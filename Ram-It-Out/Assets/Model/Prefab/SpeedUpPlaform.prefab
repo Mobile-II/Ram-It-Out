@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3520713}
   - component: {fileID: 3520710}
+  - component: {fileID: 5788536549048661786}
+  - component: {fileID: 8726327500139012232}
   m_Layer: 0
   m_Name: SpeedUpPlaform
   m_TagString: SpeedUp
@@ -51,6 +53,36 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &5788536549048661786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3520709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37909e88642b17341a71195258427c17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 0
+  Box: {fileID: 7862040755632338001, guid: 6aa73658769b6f047980c4d05cf79636, type: 3}
+  Boxes: {fileID: 8107995270227112, guid: 6aa73658769b6f047980c4d05cf79636, type: 3}
+  isSpeeding: {fileID: 8645461993761430821, guid: 6aa73658769b6f047980c4d05cf79636,
+    type: 3}
+--- !u!65 &8726327500139012232
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3520709}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 0.15, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &119268618
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,7 +94,6 @@ GameObject:
   - component: {fileID: 119268619}
   - component: {fileID: 119268621}
   - component: {fileID: 119268620}
-  - component: {fileID: 1305525563123809007}
   m_Layer: 0
   m_Name: SpeedUpPlatform 1
   m_TagString: SpeedUp
@@ -129,23 +160,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &1305525563123809007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 119268618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37909e88642b17341a71195258427c17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thrust: 0
-  Box: {fileID: 7862040755632338001, guid: 6aa73658769b6f047980c4d05cf79636, type: 3}
-  Boxes: {fileID: 8107995270227112, guid: 6aa73658769b6f047980c4d05cf79636, type: 3}
-  isSpeeding: {fileID: 8645461993761430821, guid: 6aa73658769b6f047980c4d05cf79636,
-    type: 3}
 --- !u!1 &119564594
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,7 +8,6 @@ using UnityStandardAssets.CrossPlatformInput;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody playerRB;      // Player RigidBody
-    public Text textFile;           // Get UI Text
     public bool pushingBox;         // Enable to pull or push
     bool jumpingLimit;              // Trigger jumping timer
     public bool pushingActive;      // Trigger to when near box
@@ -21,7 +21,8 @@ public class PlayerMovement : MonoBehaviour
     public float dirX;
     public float dirY;
     public float dirZ;
-    
+    public Animator playerAnimation;
+
 
     // Start is called before the first frame update
     void Start()
@@ -52,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Get button function
+       //Get button function
         Button buttonJumpActive = buttonJump.GetComponent<Button>();
         Button buttonReleaseActive = buttonRelease.GetComponent<Button>();
         Button buttonPushActive = buttonRelease.GetComponent<Button>();
@@ -62,16 +63,28 @@ public class PlayerMovement : MonoBehaviour
         CountDown();
         PlayerRespawn();
     }
+
     void FixedUpdate()
     {
         //Get key input for player
-        dirY = CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * 32.0f;
-        dirZ = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * 1.05f;
+        dirY = CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * 52.0f;
+        dirZ = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * 1.65f;
 
         // Rotate & walking
         transform.Rotate(0, dirY, 0);
-        transform.Translate(0, 0, dirZ);
+        transform.Translate(-dirZ, 0, 0);
+        if (dirZ>0 && dirY >0)
+        {
+            //playerAnimation.Play("walk");
+        }
+        else
+        {
+            
+            //playerAnimation.Play("Idle");
+        }
+        
     }
+
     void OnCollisionEnter(Collision collision)
     {
         // Jump reset when touch floor
@@ -87,7 +100,6 @@ public class PlayerMovement : MonoBehaviour
         //Enable the push and release button when near the trigger
         // Finding tag for player
         var targetObject = Boxes.gameObject.tag;
-        var playerPoint = Boxes.gameObject.tag;
         if (targetObject == "Box")
         {
             if (pushingBox == false)

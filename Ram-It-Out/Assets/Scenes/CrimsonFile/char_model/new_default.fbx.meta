@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0d83aeefac019f2429d6c7e832821708
+guid: 08173f9457bbcac4e959bcb7aef997fa
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -63,7 +63,7 @@ ModelImporter:
     400054: //RootNode
     400056: top
     400058: upbody
-    2100000: 'Material #22'
+    2100000: 02 - Default
     4300000: pCylinder006
     9500000: //RootNode
     13700000: pCylinder006
@@ -99,8 +99,8 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 3
-    addColliders: 1
+    meshCompression: 0
+    addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

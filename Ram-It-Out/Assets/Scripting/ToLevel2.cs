@@ -1,8 +1,11 @@
-﻿using System.Collections;
+﻿
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class PushBox : MonoBehaviour
+public class ToLevel2 : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,8 +19,8 @@ public class PushBox : MonoBehaviour
         
     }
 
-    void OnPush()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        SceneManager.LoadScene("Level2");
     }
 }
