@@ -21,7 +21,8 @@ public class PlayerMovement : MonoBehaviour
     public float dirX;
     public float dirY;
     public float dirZ;
-    
+    public Animator playerAnimation;
+
 
     // Start is called before the first frame update
     void Start()
@@ -72,6 +73,16 @@ public class PlayerMovement : MonoBehaviour
         // Rotate & walking
         transform.Rotate(0, dirY, 0);
         transform.Translate(-dirZ, 0, 0);
+        if (dirZ>0 && dirY >0)
+        {
+            playerAnimation.Play("walk");
+        }
+        else
+        {
+            
+            playerAnimation.Play("Idle");
+        }
+        
     }
 
     void OnCollisionEnter(Collision collision)
