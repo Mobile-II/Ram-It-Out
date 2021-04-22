@@ -75,12 +75,12 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(-dirZ, 0, 0);
         if (dirZ>0 && dirY >0)
         {
-            playerAnimation.Play("walk");
+            //playerAnimation.Play("walk");
         }
         else
         {
             
-            playerAnimation.Play("Idle");
+            //playerAnimation.Play("Idle");
         }
         
     }
