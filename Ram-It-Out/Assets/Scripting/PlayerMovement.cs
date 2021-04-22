@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Rotate & walking
         transform.Rotate(0, dirY, 0);
-        transform.Translate(-dirZ, 0, playerRB.transform.position.x);
+        transform.Translate(-dirZ, 0, 0);
     }
 
     void OnCollisionEnter(Collision collision)
