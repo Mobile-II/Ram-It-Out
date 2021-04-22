@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -51,15 +52,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Get key input for player
-        dirY = CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * 52.0f;
-        dirZ = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * 1.05f;
-
-        // Rotate & walking
-        transform.Rotate(0, dirY, 0);
-        transform.Translate(0, 0, dirZ);
-        
-        //Get button function
+       //Get button function
         Button buttonJumpActive = buttonJump.GetComponent<Button>();
         Button buttonReleaseActive = buttonRelease.GetComponent<Button>();
         Button buttonPushActive = buttonRelease.GetComponent<Button>();
@@ -69,6 +62,18 @@ public class PlayerMovement : MonoBehaviour
         CountDown();
         PlayerRespawn();
     }
+
+    void FixedUpdate()
+    {
+        //Get key input for player
+        dirY = CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * 52.0f;
+        dirZ = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * 1.05f;
+
+        // Rotate & walking
+        transform.Rotate(0, dirY, 0);
+        transform.Translate(0, 0, dirZ);
+    }
+
     void OnCollisionEnter(Collision collision)
     {
         // Jump reset when touch floor
