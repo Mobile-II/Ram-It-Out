@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //Get key input for player
         dirY = CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * 52.0f;
-        dirZ = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * 1.05f;
+        dirZ = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * 1.65f;
 
         // Rotate & walking
         transform.Rotate(0, dirY, 0);
