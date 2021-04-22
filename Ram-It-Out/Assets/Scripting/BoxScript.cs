@@ -47,14 +47,18 @@ public class BoxScript : MonoBehaviour
         var playerScript = Player.GetComponent<PlayerMovement>();
         if (playerScript.pushingBox == true || isSpeedUp == true)
         {
-            PlayerMovement = PlayerRB.transform.localPosition - pInitialPosition;
+            //PlayerMovement = PlayerRB.transform.localPosition - pInitialPosition;
             Vector3 PlayerRotationMovement = playerRotation - pInitialRotation;
-            BoxRB.MovePosition(InitialPlace + PlayerMovement);
+            //BoxRB.MovePosition(InitialPlace + PlayerMovement);
             
             //BoxRB.rotation = Quaternion.Euler(0,movementCount.dirY,0);
             //Box.transform.SetParent(Player.transform,true);
             //Box.transform.RotateAround(Player.transform.position, Vector3.up, PlayerRotationMovement.y/10);
-            
+            BoxRB.isKinematic = false;
+        }
+        else
+        {
+            BoxRB.isKinematic = true;
         }
         PlayerInitialPosition();
     }
@@ -71,16 +75,14 @@ public class BoxScript : MonoBehaviour
     public void BoxMoveable()
     {
         var playerScript = Player.GetComponent<PlayerMovement>();
-        BoxRB.isKinematic = false;
         playerScript.pushingBox = true;
         playerPosition = true;
         isSpeedUp = true;
-        BoxRB.isKinematic = false;
+        
     }
     public void BoxStop()
     {
         var playerScript = Player.GetComponent<PlayerMovement>();
-        BoxRB.isKinematic = true;
         playerScript.pushingBox = false;
         playerPosition = false;
     }
