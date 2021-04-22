@@ -65,7 +65,7 @@ ModelImporter:
     400058: upbody
     2100000: uploads_files_947700_mono_initialShadingGroup
     4300000: pCylinder006
-    7400000: Take 001
+    7400000: Idle
     9500000: //RootNode
     13700000: pCylinder006
   externalObjects: {}
@@ -97,7 +97,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: Idle
       takeName: Take 001
       firstFrame: 0
       lastFrame: 30
