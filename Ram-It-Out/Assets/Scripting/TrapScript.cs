@@ -22,6 +22,7 @@ public class TrapScript : MonoBehaviour
         if (triggerTrap == true)
         {
             PlayerLose();
+            
         }
     }
     void OnTriggerEnter(Collider other)
@@ -30,11 +31,12 @@ public class TrapScript : MonoBehaviour
         if (playerDetecter == "Player")
         {
             triggerTrap = true;
+            LoseUI.SetActive(true);
         }
     }
     void PlayerLose()
     {
         Destroy(Player);
-        LoseUI.SetActive(true);
+        
     }
 }
