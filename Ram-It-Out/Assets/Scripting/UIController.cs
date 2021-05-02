@@ -115,17 +115,17 @@ public class UIController : MonoBehaviour
 
     public void ButtonLevel1()    //quit game
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(1);
     }
 
     public void ButtonLevel2()    //quit game
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(2);
     }
 
     public void ButtonLevel3()    //quit game
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(3);
     }
 
     public void ButtonQuitGame()    //quit game

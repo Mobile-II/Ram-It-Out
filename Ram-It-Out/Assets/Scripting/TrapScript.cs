@@ -7,10 +7,13 @@ public class TrapScript : MonoBehaviour
 {
     public bool triggerTrap;
     public GameObject Player;
+    public GameObject LoseUI;
+    
     // Start is called before the first frame update
     void Start()
     {
         triggerTrap = false;
+        LoseUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -32,5 +35,6 @@ public class TrapScript : MonoBehaviour
     void PlayerLose()
     {
         Destroy(Player);
+        LoseUI.SetActive(true);
     }
 }
