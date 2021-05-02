@@ -159,7 +159,7 @@ public class PlayerMovement : MonoBehaviour
             playerAnimator.SetTrigger("IsJumping");
             limitTime += Time.deltaTime;
         }
-        if (limitTime > 15)
+        if (limitTime > 4)
         {
             jumpCount++;
             limitTime = 0;
