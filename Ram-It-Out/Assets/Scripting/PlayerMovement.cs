@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public float dirX;
     public float dirY;
     public float dirZ;
-    public Animator playerAnimation;
+    Animator playerAnimator;
 
 
     // Start is called before the first frame update
@@ -42,10 +42,10 @@ public class PlayerMovement : MonoBehaviour
         pushingBox = false;
         jumpCount = jumpMax;
         limitTime = 0f;
+        playerAnimator = GetComponent<Animator>();
         
         //Fixing player rigidbody when start the game
-        playerRB.constraints = RigidbodyConstraints.FreezePositionX |
-                               RigidbodyConstraints.FreezeRotationX |
+        playerRB.constraints = RigidbodyConstraints.FreezeRotationX |
                                RigidbodyConstraints.FreezeRotationY |
                                RigidbodyConstraints.FreezeRotationZ;
     }
@@ -68,19 +68,20 @@ public class PlayerMovement : MonoBehaviour
     {
         //Get key input for player
         dirY = CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * 52.0f;
-        dirZ = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * 1.65f;
-
+        dirZ = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * 100.65f;
+        Vector3 VelocityX = -transform.right * dirZ;
+        
         // Rotate & walking
-        transform.Rotate(0, dirY, 0);
-        transform.Translate(-dirZ, 0, 0);
+        playerRB.transform.Rotate(0, dirY, 0);
+        playerRB.velocity = new Vector3(VelocityX.x,playerRB.velocity.y,VelocityX.z);
+        
         if (dirZ>0 && dirY >0)
         {
-            //playerAnimation.Play("walk");
+            playerAnimator.SetBool("IsWalking",true);
         }
         else
         {
-            
-            //playerAnimation.Play("Idle");
+            playerAnimator.SetBool("IsWalking", false);
         }
         
     }
@@ -155,6 +156,7 @@ public class PlayerMovement : MonoBehaviour
         //Doing cooldown to prevent player spamming the jump button
         if (jumpingLimit == true)
         {
+            playerAnimator.SetTrigger("IsJumping");
             limitTime += Time.deltaTime;
         }
         if (limitTime > 15)

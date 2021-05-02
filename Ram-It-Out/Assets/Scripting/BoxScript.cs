@@ -58,7 +58,7 @@ public class BoxScript : MonoBehaviour
         }
         else
         {
-            BoxRB.isKinematic = true;
+            //isKinematic = true;
         }
         PlayerInitialPosition();
     }
